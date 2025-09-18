@@ -38,7 +38,7 @@ export default function AboutModal({ isOpen, onClose, isDarkMode = false }: Abou
       document.removeEventListener('keydown', handleEscape)
       document.body.style.overflow = 'unset'
     }
-  }, [isOpen])
+  }, [isOpen, handleClose])
 
   const handleClose = useCallback(() => {
     setIsVisible(false)

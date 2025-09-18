@@ -887,7 +887,7 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                             marginTop: '50px'
                           }}
                         >
-                          No songs found matching "{searchTerm}"
+                          No songs found matching &quot;{searchTerm}&quot;
                         </div>
                       )}
                     </div>
