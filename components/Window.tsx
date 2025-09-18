@@ -278,7 +278,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             className="transition-all duration-150"
                             style={{ 
                               marginRight: '4px',
-                              filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                              filter: 'brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(1456%) hue-rotate(204deg) brightness(101%) contrast(101%)'
                             }}
                           />
                           <span 
@@ -339,7 +339,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             className="transition-all duration-150"
                             style={{ 
                               marginRight: '4px',
-                              filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                              filter: 'brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(1456%) hue-rotate(204deg) brightness(101%) contrast(101%)'
                             }}
                           />
                           <span 
@@ -399,7 +399,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             className="transition-all duration-150"
                             style={{ 
                               marginRight: '4px',
-                              filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                              filter: 'brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(1456%) hue-rotate(204deg) brightness(101%) contrast(101%)'
                             }}
                           />
                           <span 
@@ -417,9 +417,595 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                         </div>
                       </div>
                     </div>
+                    
+                    {/* iCloud Title Container */}
+                    <div 
+                      className="flex items-center"
+                      style={{
+                        width: '224px',
+                        height: '34px',
+                        paddingLeft: '18px',
+                        paddingTop: '24px',
+                        paddingBottom: '11px',
+                        paddingRight: '12px'
+                      }}
+                    >
+                      <h3 
+                        className="text-left"
+                        style={{
+                          color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.5)',
+                          fontSize: '11px',
+                          fontWeight: '700',
+                          fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                          margin: 0
+                        }}
+                      >
+                        iCloud
+                      </h3>
                   </div>
+                    
+                    {/* iCloud Tabs */}
+                    <div className="px-2" style={{ marginTop: '2px' }}>
+                      {/* iCloud Drive */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const img = e.currentTarget.querySelector('img')
+                          const span = e.currentTarget.querySelector('span')
+                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(67%) sepia(100%) saturate(1000%) hue-rotate(180deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const img = e.currentTarget.querySelector('img')
+                          const span = e.currentTarget.querySelector('span')
+                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(67%) sepia(100%) saturate(1000%) hue-rotate(180deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = 'white'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <img 
+                            src="/images/cloud-icob.svg" 
+                            alt="iCloud Drive" 
+                            width="16" 
+                            height="16" 
+                            className="transition-all duration-150"
+                            style={{ 
+                              marginRight: '4px',
+                              filter: 'brightness(0) saturate(100%) invert(67%) sepia(100%) saturate(1000%) hue-rotate(180deg) brightness(100%) contrast(100%)'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: 'white',
+                              marginRight: '10px'
+                            }}
+                          >
+                            iCloud Drive
+                          </span>
                 </div>
               </div>
+
+                      {/* Shared */}
+              <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const img = e.currentTarget.querySelector('img')
+                          const span = e.currentTarget.querySelector('span')
+                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(67%) sepia(100%) saturate(1000%) hue-rotate(180deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const img = e.currentTarget.querySelector('img')
+                          const span = e.currentTarget.querySelector('span')
+                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(67%) sepia(100%) saturate(1000%) hue-rotate(180deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = 'white'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                  style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <img 
+                            src="/images/shared-icon.svg" 
+                            alt="Shared" 
+                            width="16" 
+                            height="16" 
+                            className="transition-all duration-150"
+                            style={{ 
+                              marginRight: '4px',
+                              filter: 'brightness(0) saturate(100%) invert(67%) sepia(100%) saturate(1000%) hue-rotate(180deg) brightness(100%) contrast(100%)'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: 'white',
+                              marginRight: '10px'
+                            }}
+                          >
+                            Shared
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Tags Title Container */}
+                    <div 
+                      className="flex items-center"
+                      style={{
+                        width: '224px',
+                        height: '34px',
+                        paddingLeft: '18px',
+                        paddingTop: '24px',
+                        paddingBottom: '11px',
+                        paddingRight: '12px'
+                      }}
+                    >
+                      <h3 
+                        className="text-left"
+                        style={{
+                          color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.5)',
+                          fontSize: '11px',
+                          fontWeight: '700',
+                          fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                          margin: 0
+                        }}
+                      >
+                        Tags
+                      </h3>
+                    </div>
+                    
+                    {/* Tags Items */}
+                    <div className="px-2" style={{ marginTop: '2px' }}>
+                      {/* Red */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                          style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'white'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <div 
+                            style={{
+                              width: '8px',
+                              height: '8px',
+                              borderRadius: '50%',
+                              backgroundColor: '#FF3B30',
+                              marginRight: '8px'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: 'white',
+                              marginRight: '10px'
+                            }}
+                          >
+                            Red
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Orange */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'white'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <div 
+                            style={{
+                              width: '8px',
+                              height: '8px',
+                              borderRadius: '50%',
+                              backgroundColor: '#FF9500',
+                              marginRight: '8px'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: 'white',
+                              marginRight: '10px'
+                            }}
+                          >
+                            Orange
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Yellow */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'white'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <div 
+                            style={{
+                              width: '8px',
+                              height: '8px',
+                              borderRadius: '50%',
+                              backgroundColor: '#FFCC00',
+                              marginRight: '8px'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: 'white',
+                              marginRight: '10px'
+                            }}
+                          >
+                            Yellow
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Green */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'white'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <div 
+                            style={{
+                              width: '8px',
+                              height: '8px',
+                              borderRadius: '50%',
+                              backgroundColor: '#34C759',
+                              marginRight: '8px'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: 'white',
+                              marginRight: '10px'
+                            }}
+                          >
+                            Green
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Blue */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'white'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <div 
+                            style={{
+                              width: '8px',
+                              height: '8px',
+                              borderRadius: '50%',
+                              backgroundColor: '#007AFF',
+                              marginRight: '8px'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: 'white',
+                              marginRight: '10px'
+                            }}
+                          >
+                            Blue
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Purple */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'white'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <div 
+                            style={{
+                              width: '8px',
+                              height: '8px',
+                              borderRadius: '50%',
+                              backgroundColor: '#AF52DE',
+                              marginRight: '8px'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: 'white',
+                              marginRight: '10px'
+                            }}
+                          >
+                            Purple
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Grey */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'white'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <div 
+                            style={{
+                              width: '8px',
+                              height: '8px',
+                              borderRadius: '50%',
+                              backgroundColor: '#8E8E93',
+                              marginRight: '8px'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: 'white',
+                              marginRight: '10px'
+                            }}
+                          >
+                            Grey
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* All Tags */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const img = e.currentTarget.querySelector('img')
+                          const span = e.currentTarget.querySelector('span')
+                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const img = e.currentTarget.querySelector('img')
+                          const span = e.currentTarget.querySelector('span')
+                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = 'white'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                        }}
+                      >
+                        <img 
+                            src="/images/all-tags.svg" 
+                            alt="All Tags" 
+                            width="14" 
+                            height="14" 
+                            className="transition-all duration-150"
+                          style={{
+                              marginRight: '4px',
+                              filter: 'brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: 'white',
+                              marginRight: '10px'
+                            }}
+                          >
+                            All Tags
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                    </div>
 
               {/* Main Content Area */}
               <div 
@@ -437,83 +1023,8 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                     height: '52px'
                   }}
                 >
-                  {/* Left side - Navigation arrows, title, and empty container */}
+                  {/* Left side - Title */}
                   <div className="flex items-center" style={{ gap: '8px' }}>
-                    {/* Arrow Container */}
-                    <div 
-                      className="flex items-center justify-center gap-1"
-                      style={{
-                        width: '67px',
-                        height: '36px',
-                        borderRadius: '18px',
-                        background: 'rgba(247, 247, 247, 0.8)',
-                        backdropFilter: 'blur(20px) saturate(180%)',
-                        WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-                        boxShadow: `
-                          inset 0 1px 0 rgba(255, 255, 255, 0.6),
-                          inset 0 -1px 0 rgba(0, 0, 0, 0.1),
-                          0 2px 8px rgba(0, 0, 0, 0.1)
-                        `,
-                        isolation: 'isolate'
-                      }}
-                    >
-                      {/* Left Arrow */}
-                      <button 
-                        className="flex items-center justify-center"
-                        style={{
-                          width: '20px',
-                          height: '20px',
-                          border: 'none',
-                          background: 'transparent',
-                          cursor: 'pointer',
-                          padding: 0
-                        }}
-                      >
-                        <img 
-                          src="/images/arrow-left.svg" 
-                          alt="Back" 
-                          width="20" 
-                          height="20"
-                          style={{
-                            filter: 'brightness(0) saturate(100%) invert(20%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
-                          }}
-                        />
-                      </button>
-                      
-                      {/* Divider */}
-                      <div 
-                        className="flex items-center justify-center"
-                        style={{
-                          width: '1px',
-                          height: '12px',
-                          backgroundColor: 'rgba(0, 0, 0, 0.15)'
-                        }}
-                      />
-                      
-                      {/* Right Arrow */}
-                      <button 
-                        className="flex items-center justify-center"
-                        style={{
-                          width: '20px',
-                          height: '20px',
-                          border: 'none',
-                          background: 'transparent',
-                          cursor: 'pointer',
-                          padding: 0
-                        }}
-                      >
-                        <img 
-                          src="/images/arrow-right.svg" 
-                          alt="Forward" 
-                          width="20" 
-                          height="20"
-                          style={{
-                            filter: 'brightness(0) saturate(100%) invert(60%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
-                          }}
-                        />
-                      </button>
-                    </div>
-
                     {/* About Me Title */}
                     <h2 
                       style={{
@@ -535,7 +1046,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                     {/* Empty Container */}
                     <div 
                       style={{
-                        width: '151px',
+                        width: '218px',
                         height: '36px'
                       }}
                     />
