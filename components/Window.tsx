@@ -861,9 +861,9 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                           display: 'flex',
                           alignItems: 'center'
                         }}
-                      >
-                        Ohene's CV
-                      </div>
+                        >
+                          Ohene&apos;s CV
+                        </div>
                     </div>
 
                     {/* Date Time Container */}
