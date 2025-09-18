@@ -26,6 +26,8 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
   const [selectedSong, setSelectedSong] = useState<Song | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null)
+  const [recentlyPlayed, setRecentlyPlayed] = useState<Song[]>([])
+  const [currentView, setCurrentView] = useState<'home' | 'new'>('home')
 
   const musicData: Song[] = [
     {
@@ -66,19 +68,19 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
     },
     {
       id: 5,
-      cover: '/images/cover-image-1.png',
-      coverSelected: '/images/cover-image-1-selected.png',
-      title: 'Habit (feat. Medikal) - Single',
-      artist: 'Fameye',
+      cover: '/images/cover-image-5.png',
+      coverSelected: '/images/cover-image-5.png',
+      title: 'Eye Open',
+      artist: 'Black Sherif',
       genre: 'HIP POP',
       year: '2025'
     },
     {
       id: 6,
-      cover: '/images/cover-image-2.png',
-      coverSelected: '/images/cover-image-2-selected.png',
-      title: 'Tracking You - Single',
-      artist: 'Oseikrom Sikanii',
+      cover: '/images/cover-image-6.png',
+      coverSelected: '/images/cover-image-6.png',
+      title: 'Homicide ft La Même Gang',
+      artist: 'Sarkodie',
       genre: 'HIP POP',
       year: '2024'
     },
@@ -102,7 +104,42 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
     }
   ]
 
+  const newSongs: Song[] = [
+    {
+      id: 101,
+      cover: '/images/new-cover-image-1.png',
+      coverSelected: '/images/new-cover-image-1.png',
+      title: 'Violence (Ft. Kwaku Smoke)',
+      artist: 'Sarkodie',
+      genre: 'HIP POP',
+      year: '2025'
+    },
+    {
+      id: 102,
+      cover: '/images/new-cover-image-2.png',
+      coverSelected: '/images/new-cover-image-2.png',
+      title: 'Dem Confuse',
+      artist: 'Shatta Wale',
+      genre: 'HIP POP',
+      year: '2025'
+    },
+    {
+      id: 103,
+      cover: '/images/cover-image-3.png',
+      coverSelected: '/images/cover-image-3-selected.png',
+      title: 'New Song 3',
+      artist: 'New Artist 3',
+      genre: 'HIP POP',
+      year: '2025'
+    }
+  ]
+
   const filteredMusic = musicData.filter(music => 
+    music.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    music.artist.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
+  const filteredNewSongs = newSongs.filter(music => 
     music.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     music.artist.toLowerCase().includes(searchTerm.toLowerCase())
   )
@@ -128,6 +165,15 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
     setSelectedSong(null)
   }
 
+  const addToRecentlyPlayed = (song: Song) => {
+    setRecentlyPlayed(prev => {
+      // Remove the song if it already exists in the list
+      const filtered = prev.filter(s => s.id !== song.id)
+      // Add the song to the beginning of the list
+      return [song, ...filtered].slice(0, 10) // Keep only the last 10 played songs
+    })
+  }
+
   const handlePlaySong = () => {
     if (selectedSong?.id === 1) { // Fameye - Habit song
       if (isPlaying && currentAudio) {
@@ -146,6 +192,7 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
         setCurrentAudio(audio)
         audio.play().then(() => {
           setIsPlaying(true)
+          if (selectedSong) addToRecentlyPlayed(selectedSong)
         }).catch(error => {
           console.error('Error playing audio:', error)
         })
@@ -173,6 +220,7 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
         setCurrentAudio(audio)
         audio.play().then(() => {
           setIsPlaying(true)
+          if (selectedSong) addToRecentlyPlayed(selectedSong)
         }).catch(error => {
           console.error('Error playing audio:', error)
         })
@@ -200,6 +248,7 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
         setCurrentAudio(audio)
         audio.play().then(() => {
           setIsPlaying(true)
+          if (selectedSong) addToRecentlyPlayed(selectedSong)
         }).catch(error => {
           console.error('Error playing audio:', error)
         })
@@ -227,6 +276,119 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
         setCurrentAudio(audio)
         audio.play().then(() => {
           setIsPlaying(true)
+          if (selectedSong) addToRecentlyPlayed(selectedSong)
+        }).catch(error => {
+          console.error('Error playing audio:', error)
+        })
+        
+        // Handle when audio ends
+        audio.onended = () => {
+          setIsPlaying(false)
+          setCurrentAudio(null)
+        }
+      }
+    } else if (selectedSong?.id === 5) { // Black Sherif - Eye Open song
+      if (isPlaying && currentAudio) {
+        // Pause the current audio
+        currentAudio.pause()
+        setIsPlaying(false)
+      } else {
+        // Stop any existing audio
+        if (currentAudio) {
+          currentAudio.pause()
+          currentAudio.currentTime = 0
+        }
+        
+        // Play new audio
+        const audio = new Audio('/songs/eye-open.mp3')
+        setCurrentAudio(audio)
+        audio.play().then(() => {
+          setIsPlaying(true)
+          if (selectedSong) addToRecentlyPlayed(selectedSong)
+        }).catch(error => {
+          console.error('Error playing audio:', error)
+        })
+        
+        // Handle when audio ends
+        audio.onended = () => {
+          setIsPlaying(false)
+          setCurrentAudio(null)
+        }
+      }
+    } else if (selectedSong?.id === 6) { // Sarkodie - Homicide ft La Même Gang song
+      if (isPlaying && currentAudio) {
+        // Pause the current audio
+        currentAudio.pause()
+        setIsPlaying(false)
+      } else {
+        // Stop any existing audio
+        if (currentAudio) {
+          currentAudio.pause()
+          currentAudio.currentTime = 0
+        }
+        
+        // Play new audio
+        const audio = new Audio('/songs/homicide.mp3')
+        setCurrentAudio(audio)
+        audio.play().then(() => {
+          setIsPlaying(true)
+          if (selectedSong) addToRecentlyPlayed(selectedSong)
+        }).catch(error => {
+          console.error('Error playing audio:', error)
+        })
+        
+        // Handle when audio ends
+        audio.onended = () => {
+          setIsPlaying(false)
+          setCurrentAudio(null)
+        }
+      }
+    } else if (selectedSong?.id === 101) { // Sarkodie - Violence (Ft. Kwaku Smoke) song
+      if (isPlaying && currentAudio) {
+        // Pause the current audio
+        currentAudio.pause()
+        setIsPlaying(false)
+      } else {
+        // Stop any existing audio
+        if (currentAudio) {
+          currentAudio.pause()
+          currentAudio.currentTime = 0
+        }
+        
+        // Play new audio
+        const audio = new Audio('/songs/violence.mp3')
+        setCurrentAudio(audio)
+        audio.play().then(() => {
+          setIsPlaying(true)
+          if (selectedSong) addToRecentlyPlayed(selectedSong)
+        }).catch(error => {
+          console.error('Error playing audio:', error)
+        })
+        
+        // Handle when audio ends
+        audio.onended = () => {
+          setIsPlaying(false)
+          setCurrentAudio(null)
+        }
+      }
+    } else if (selectedSong?.id === 102) { // Shatta Wale - Dem Confuse song
+      if (isPlaying && currentAudio) {
+        // Pause the current audio
+        currentAudio.pause()
+        setIsPlaying(false)
+      } else {
+        // Stop any existing audio
+        if (currentAudio) {
+          currentAudio.pause()
+          currentAudio.currentTime = 0
+        }
+        
+        // Play new audio
+        const audio = new Audio('/songs/dem-confuse.mp3')
+        setCurrentAudio(audio)
+        audio.play().then(() => {
+          setIsPlaying(true)
+          if (selectedSong) addToRecentlyPlayed(selectedSong)
         }).catch(error => {
           console.error('Error playing audio:', error)
         })
@@ -280,7 +442,7 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                 onClick={onClose}
                 className="w-3 h-3 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
                 style={{
-                  backgroundColor: '#FF736A'
+                  backgroundColor: '#FF383C'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.innerHTML = '<svg width="8" height="8" viewBox="0 0 8 8" fill="white"><path d="M6.5 1.5L1.5 6.5M1.5 1.5L6.5 6.5" stroke="white" stroke-width="1" stroke-linecap="round"/></svg>'
@@ -364,16 +526,6 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                     }}
                   />
                   
-                  {/* Glass reflection overlay */}
-                  <div 
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                      background: isDarkMode 
-                        ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 30%, transparent 70%)'
-                        : 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.1) 30%, transparent 70%)',
-                      borderRadius: '18px'
-                    }}
-                  />
                   
                   {/* Side nav content area */}
                   <div className="relative z-10 h-full">
@@ -408,7 +560,10 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                       {/* Recent */}
                       <div 
                         className="flex items-center cursor-pointer transition-colors duration-150"
-                        onClick={handleBackToGrid}
+                        onClick={() => {
+                          setCurrentView('home')
+                          handleBackToGrid()
+                        }}
                         style={{
                           width: '224px',
                           height: '24px',
@@ -422,7 +577,7 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                             width: '204px',
                             height: '24px',
                             borderRadius: '8px',
-                            backgroundColor: 'rgba(0, 0, 0, 0.11)',
+                            backgroundColor: currentView === 'home' ? 'rgba(0, 0, 0, 0.2)' : 'transparent',
                             paddingLeft: '8px'
                           }}
                         >
@@ -453,6 +608,10 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                       {/* New */}
                       <div 
                         className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        onClick={() => {
+                          setCurrentView('new')
+                          setSelectedSong(null)
+                        }}
                         style={{
                           width: '224px',
                           height: '24px',
@@ -461,7 +620,7 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                         }}
                         onMouseEnter={(e) => {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = 'black'
+                          if (span) span.style.color = isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'
                         }}
                         onMouseLeave={(e) => {
                           const span = e.currentTarget.querySelector('span')
@@ -474,6 +633,7 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                             width: '204px',
                             height: '24px',
                             borderRadius: '8px',
+                            backgroundColor: currentView === 'new' ? 'rgba(0, 0, 0, 0.2)' : 'transparent',
                             paddingLeft: '8px'
                           }}
                         >
@@ -554,7 +714,297 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                         </div>
                       </div>
 
-                      {/* Playlist */}
+                    </div>
+
+                    {/* Library Title Container */}
+                    <div 
+                      className="flex items-center"
+                      style={{
+                        width: '224px',
+                        height: '34px',
+                        paddingLeft: '18px',
+                        paddingTop: '24px',
+                        paddingBottom: '11px',
+                        paddingRight: '12px'
+                      }}
+                    >
+                      <h3 
+                        className="text-left"
+                        style={{
+                          color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.5)',
+                          fontSize: '11px',
+                          fontWeight: '700',
+                          fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                          margin: 0
+                        }}
+                      >
+                        Library
+                      </h3>
+                    </div>
+                    
+                    {/* Library Tabs */}
+                    <div className="px-2" style={{ marginTop: '2px' }}>
+                      {/* Recently Added */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <img 
+                            src="/images/recently-added.svg" 
+                            alt="Recently Added" 
+                            width="12" 
+                            height="12" 
+                            style={{ 
+                              marginRight: '4px',
+                              filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7500%) hue-rotate(0deg) brightness(84%) contrast(84%)'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                              marginRight: '10px'
+                            }}
+                          >
+                            Recently Added
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Artists */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <img 
+                            src="/images/artist-icon.svg" 
+                            alt="Artists" 
+                            width="12" 
+                            height="12" 
+                            style={{ 
+                              marginRight: '4px',
+                              filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7500%) hue-rotate(0deg) brightness(84%) contrast(84%)'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                              marginRight: '10px'
+                            }}
+                          >
+                            Artists
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Albums */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <img 
+                            src="/images/album.svg" 
+                            alt="Albums" 
+                            width="12" 
+                            height="12" 
+                            style={{ 
+                              marginRight: '4px',
+                              filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7500%) hue-rotate(0deg) brightness(84%) contrast(84%)'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                              marginRight: '10px'
+                            }}
+                          >
+                            Albums
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Songs */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <img 
+                            src="/images/playlist-icon.svg" 
+                            alt="Songs" 
+                            width="12" 
+                            height="12" 
+                            style={{ 
+                              marginRight: '4px',
+                              filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7500%) hue-rotate(0deg) brightness(84%) contrast(84%)'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                              marginRight: '10px'
+                            }}
+                          >
+                            Songs
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Music Videos */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <img 
+                            src="/images/music-video-icon.svg" 
+                            alt="Music Videos" 
+                            width="12" 
+                            height="12" 
+                            style={{ 
+                              marginRight: '4px',
+                              filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(7500%) hue-rotate(0deg) brightness(84%) contrast(84%)'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                              marginRight: '10px'
+                            }}
+                          >
+                            Music Videos
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Made For Me */}
                       <div 
                         className="flex items-center cursor-pointer transition-colors duration-150 group"
                         style={{
@@ -581,8 +1031,8 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                           }}
                         >
                           <img 
-                            src="/images/playlist-icon.svg" 
-                            alt="Playlist" 
+                            src="/images/for-me-icon.svg" 
+                            alt="Made For Me" 
                             width="12" 
                             height="12" 
                             style={{ 
@@ -600,7 +1050,295 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                               marginRight: '10px'
                             }}
                           >
-                            Playlist
+                            Made For Me
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Playlists Title Container */}
+                    <div 
+                      className="flex items-center"
+                      style={{
+                        width: '224px',
+                        height: '34px',
+                        paddingLeft: '18px',
+                        paddingTop: '24px',
+                        paddingBottom: '11px',
+                        paddingRight: '12px'
+                      }}
+                    >
+                      <h3 
+                        className="text-left"
+                        style={{
+                          color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.5)',
+                          fontSize: '11px',
+                          fontWeight: '700',
+                          fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                          margin: 0
+                        }}
+                      >
+                        Playlists
+                      </h3>
+                    </div>
+                    
+                    {/* Playlists Tabs */}
+                    <div className="px-2" style={{ marginTop: '2px' }}>
+                      {/* All Playlists */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <img 
+                            src="/images/all-playlist-icon.svg" 
+                            alt="All Playlists" 
+                            width="12" 
+                            height="12" 
+                            style={{ 
+                              marginRight: '4px',
+                              filter: 'brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                              marginRight: '10px'
+                            }}
+                          >
+                            All Playlists
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Favourite Songs */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <img 
+                            src="/images/favourite-songs-icons.svg" 
+                            alt="Favourite Songs" 
+                            width="12" 
+                            height="12" 
+                            style={{ 
+                              marginRight: '4px',
+                              filter: 'brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                              marginRight: '10px'
+                            }}
+                          >
+                            Favourite Songs
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* 🔥🔥🔥🔥 */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <img 
+                            src="/images/rest-music-icon.svg" 
+                            alt="🔥🔥🔥🔥" 
+                            width="12" 
+                            height="12" 
+                            style={{ 
+                              marginRight: '4px',
+                              filter: 'brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                              marginRight: '10px'
+                            }}
+                          >
+                            🔥🔥🔥🔥
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* 2010 Afrobeat Essentials */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px',
+                          marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <img 
+                            src="/images/rest-music-icon.svg" 
+                            alt="2010 Afrobeat Essentials" 
+                            width="12" 
+                            height="12" 
+                            style={{ 
+                              marginRight: '4px',
+                              filter: 'brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                              marginRight: '10px'
+                            }}
+                          >
+                            2010 Afrobeat Essentials
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Love❤️ */}
+                      <div 
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
+                        style={{
+                          width: '224px',
+                          height: '24px',
+                          paddingLeft: '6px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const span = e.currentTarget.querySelector('span')
+                          if (span) span.style.color = isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'
+                        }}
+                      >
+                        <div 
+                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          style={{
+                            width: '204px',
+                            height: '24px',
+                            borderRadius: '8px',
+                            paddingLeft: '8px'
+                          }}
+                        >
+                          <img 
+                            src="/images/rest-music-icon.svg" 
+                            alt="Love❤️" 
+                            width="12" 
+                            height="12" 
+                            style={{ 
+                              marginRight: '4px',
+                              filter: 'brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                            }}
+                          />
+                          <span 
+                            className="transition-colors duration-150"
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '11px',
+                              fontWeight: '500',
+                              color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                              marginRight: '10px'
+                            }}
+                          >
+                            Love❤️
                           </span>
                         </div>
                       </div>
@@ -622,7 +1360,9 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                   className="flex items-center justify-between"
                   style={{
                     width: '660px',
-                    height: '52px'
+                    height: '52px',
+                    padding: '0 24px',
+                    boxSizing: 'border-box'
                   }}
                 >
                   {/* Left side - Title and empty container */}
@@ -648,8 +1388,9 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                     {/* Empty Container */}
                     <div 
                       style={{
-                        width: '405px',
-                        height: '36px'
+                        width: '395px',
+                        height: '36px',
+                        flexShrink: 1
                       }}
                     />
 
@@ -657,7 +1398,7 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                     <div 
                       className="flex items-center"
                       style={{
-                        width: '130px',
+                        width: '120px',
                         height: '36px',
                         borderRadius: '18px',
                         background: 'rgba(247, 247, 247, 0.8)',
@@ -670,7 +1411,8 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                         `,
                         isolation: 'isolate',
                         padding: '0 12px',
-                        gap: '6px'
+                        gap: '6px',
+                        flexShrink: 0
                       }}
                     >
                       {/* Magnifying Glass Icon */}
@@ -715,10 +1457,51 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                 </div>
 
                 {/* Main Content */}
-                <div className="flex-1">
+                <div 
+                  className="flex-1" 
+                  style={{ 
+                    padding: '16px 24px',
+                    overflowY: 'auto',
+                    height: 'calc(100% - 52px)'
+                  }}
+                >
                   {selectedSong ? (
                     /* Detailed Song View */
-                    <div className="flex flex-col justify-start h-full p-8">
+                    <div className="flex flex-col justify-start h-full">
+                      {/* Back Button */}
+                      <button
+                        onClick={handleBackToGrid}
+                        className="flex items-center justify-center mb-6 transition-colors duration-200 hover:bg-gray-100 rounded-full"
+                        style={{
+                          width: '32px',
+                          height: '32px',
+                          backgroundColor: 'transparent',
+                          border: 'none',
+                          cursor: 'pointer'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = 'transparent'
+                        }}
+                      >
+                        <svg 
+                          width="20" 
+                          height="20" 
+                          viewBox="0 0 24 24" 
+                          fill="none"
+                        >
+                          <path 
+                            d="M15 18L9 12L15 6" 
+                            stroke={isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'} 
+                            strokeWidth="2" 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </button>
+                      
                       <div className="flex items-start gap-8 w-full">
                         {/* Album Art */}
                         <div className="relative">
@@ -778,7 +1561,7 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                           <button
                             onClick={handlePlaySong}
                             style={{
-                              backgroundColor: '#D60017',
+                              backgroundColor: '#FF383C',
                               color: 'white',
                               border: 'none',
                               borderRadius: '3.51px',
@@ -795,10 +1578,10 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                               transition: 'all 0.2s ease'
                             }}
                             onMouseEnter={(e) => {
-                              e.currentTarget.style.backgroundColor = '#B80014'
+                              e.currentTarget.style.backgroundColor = '#E62E32'
                             }}
                             onMouseLeave={(e) => {
-                              e.currentTarget.style.backgroundColor = '#D60017'
+                              e.currentTarget.style.backgroundColor = '#FF383C'
                             }}
                           >
                             {isPlaying ? (
@@ -818,9 +1601,41 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                     </div>
                   ) : (
                     /* Music Grid View */
+                    <div className="flex flex-col">
+                      {/* Page Title */}
+                      <h2 
+                        style={{
+                          fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                          fontSize: '24px',
+                          fontWeight: '700',
+                          color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                          margin: '0 0 16px 0',
+                          lineHeight: '1.2'
+                        }}
+                      >
+                        {currentView === 'home' ? 'Home' : 'New'}
+                      </h2>
+                      
+                      {currentView === 'home' ? (
+                        <>
+                          {/* My Top Picks Title */}
+                          <h3 
+                            style={{
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '20px',
+                              fontWeight: '600',
+                              color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                              margin: '0 0 16px 0',
+                              lineHeight: '1.2'
+                            }}
+                          >
+                            My Top Picks
+                          </h3>
+                          
+                          {/* Music Grid */}
                     <div className="flex flex-wrap" style={{ gap: '16px' }}>
                       {filteredMusic.length > 0 ? (
-                        filteredMusic.map((music) => (
+                              filteredMusic.slice(0, 6).map((music) => (
                           <div 
                             key={music.id}
                             className="music-card"
@@ -899,6 +1714,196 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                         >
                           No songs found matching &quot;{searchTerm}&quot;
                         </div>
+                      )}
+                      </div>
+                      
+                      {/* Recently Played Title */}
+                      <h3 
+                        style={{
+                          fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                          fontSize: '20px',
+                          fontWeight: '600',
+                          color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                          margin: '32px 0 16px 0',
+                          lineHeight: '1.2'
+                        }}
+                      >
+                        Recently Played
+                      </h3>
+                      
+                      {/* Recently Played Grid */}
+                      <div className="flex flex-wrap" style={{ gap: '16px' }}>
+                        {recentlyPlayed.length > 0 ? (
+                          recentlyPlayed.slice(0, 4).map((music) => (
+                            <div 
+                              key={`recent-${music.id}`}
+                              className="music-card"
+                              onClick={() => handleCardClick(music)}
+                              style={{
+                                width: '150px',
+                                height: '180px',
+                                borderRadius: '8px',
+                                backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                overflow: 'hidden',
+                                position: 'relative',
+                                cursor: 'pointer',
+                                transition: 'transform 0.2s ease'
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'scale(1.05)'
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'scale(1)'
+                              }}
+                            >
+                              {/* Cover Image */}
+                              <img 
+                                src={music.cover} 
+                                alt="Cover" 
+                                style={{
+                                  width: '150px',
+                                  height: '150px',
+                                  objectFit: 'cover',
+                                  objectPosition: 'center',
+                                  borderRadius: '8px 8px 0 0',
+                                  display: 'block'
+                                }}
+                              />
+                              
+                              {/* Card Content */}
+                              <div 
+                                style={{
+                                  width: '100%',
+                                  height: '30px',
+                                  background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%)',
+                                  display: 'flex',
+                                  flexDirection: 'column',
+                                  alignItems: 'center',
+                                  justifyContent: 'center',
+                                  color: 'white',
+                                  fontSize: '12px',
+                                  fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                  fontWeight: '500',
+                                  borderRadius: '0 0 8px 8px',
+                                  padding: '4px',
+                                  lineHeight: '1.2'
+                                }}
+                              >
+                                <div style={{ fontSize: '8px', textAlign: 'center', whiteSpace: 'nowrap' }}>
+                                  {music.title}
+                                </div>
+                                <div style={{ fontSize: '9px', textAlign: 'center' }}>
+                                  {music.artist}
+                                </div>
+                              </div>
+                            </div>
+                          ))
+                        ) : (
+                          <div 
+                            style={{
+                              width: '100%',
+                              textAlign: 'center',
+                              color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)',
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              fontSize: '14px',
+                              marginTop: '50px'
+                            }}
+                          >
+                            No recently played songs
+                    </div>
+                  )}
+                </div>
+                        </>
+                      ) : (
+                        /* New View */
+                        <>
+                          {/* New Songs Grid */}
+                          <div className="flex flex-wrap" style={{ gap: '16px' }}>
+                            {filteredNewSongs.length > 0 ? (
+                              filteredNewSongs.map((music) => (
+                                <div 
+                                  key={music.id}
+                                  className="music-card"
+                                  onClick={() => handleCardClick(music)}
+                                  style={{
+                                    width: '150px',
+                                    height: '180px',
+                                    borderRadius: '8px',
+                                    backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    overflow: 'hidden',
+                                    position: 'relative',
+                                    cursor: 'pointer',
+                                    transition: 'transform 0.2s ease'
+                                  }}
+                                  onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'scale(1.05)'
+                                  }}
+                                  onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'scale(1)'
+                                  }}
+                                >
+                                  {/* Cover Image */}
+                                  <img 
+                                    src={music.cover} 
+                                    alt="Cover" 
+                                    style={{
+                                      width: '150px',
+                                      height: '150px',
+                                      objectFit: 'cover',
+                                      objectPosition: 'center',
+                                      borderRadius: '8px 8px 0 0',
+                                      display: 'block'
+                                    }}
+                                  />
+                                  
+                                  {/* Card Content */}
+                                  <div 
+                                    style={{
+                                      width: '100%',
+                                      height: '30px',
+                                      background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%)',
+                                      display: 'flex',
+                                      flexDirection: 'column',
+                                      alignItems: 'center',
+                                      justifyContent: 'center',
+                                      color: 'white',
+                                      fontSize: '12px',
+                                      fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                      fontWeight: '500',
+                                      borderRadius: '0 0 8px 8px',
+                                      padding: '4px',
+                                      lineHeight: '1.2'
+                                    }}
+                                  >
+                                    <div style={{ fontSize: '8px', textAlign: 'center', whiteSpace: 'nowrap' }}>
+                                      {music.title}
+                                    </div>
+                                    <div style={{ fontSize: '9px', textAlign: 'center' }}>
+                                      {music.artist}
+                                    </div>
+                                  </div>
+                                </div>
+                              ))
+                            ) : (
+                              <div 
+                                style={{
+                                  width: '100%',
+                                  textAlign: 'center',
+                                  color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)',
+                                  fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                  fontSize: '14px',
+                                  marginTop: '50px'
+                                }}
+                              >
+                                No new songs found
+                              </div>
+                            )}
+                          </div>
+                        </>
                       )}
                     </div>
                   )}

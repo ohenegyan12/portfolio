@@ -156,16 +156,6 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                     }}
                   />
                   
-                  {/* Glass reflection overlay - -45° light angle, 90% intensity */}
-                  <div 
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                      background: isDarkMode 
-                        ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 30%, transparent 70%)'
-                        : 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.1) 30%, transparent 70%)',
-                      borderRadius: '18px'
-                    }}
-                  />
                   
                   {/* Side nav content area */}
                   <div className="relative z-10 h-full">
