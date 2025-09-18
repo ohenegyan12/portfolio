@@ -11,13 +11,23 @@ interface AppleMusicWindowProps {
   isDarkMode?: boolean
 }
 
+interface Song {
+  id: number
+  cover: string
+  coverSelected: string
+  title: string
+  artist: string
+  genre: string
+  year: string
+}
+
 export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }: AppleMusicWindowProps) {
   const [searchTerm, setSearchTerm] = useState('')
-  const [selectedSong, setSelectedSong] = useState(null)
+  const [selectedSong, setSelectedSong] = useState<Song | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null)
 
-  const musicData = [
+  const musicData: Song[] = [
     {
       id: 1,
       cover: '/images/cover-image-1.png',
