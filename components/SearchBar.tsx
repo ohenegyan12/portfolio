@@ -12,6 +12,14 @@ export default function SearchBar({ isOpen, onClose }: SearchBarProps) {
   const [isVisible, setIsVisible] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
+  const handleClose = useCallback(() => {
+    setIsVisible(false)
+    // Wait for animation to complete before calling onClose
+    setTimeout(() => {
+      onClose()
+    }, 300)
+  }, [onClose])
+
   useEffect(() => {
     if (isOpen) {
       setIsVisible(true)
@@ -54,14 +62,6 @@ export default function SearchBar({ isOpen, onClose }: SearchBarProps) {
       // You can implement your search functionality here
     }
   }
-
-  const handleClose = useCallback(() => {
-    setIsVisible(false)
-    // Wait for animation to complete before calling onClose
-    setTimeout(() => {
-      onClose()
-    }, 300)
-  }, [onClose])
 
   if (!isOpen) return null
 
