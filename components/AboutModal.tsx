@@ -5,9 +5,10 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 interface AboutModalProps {
   isOpen: boolean
   onClose: () => void
+  isDarkMode?: boolean
 }
 
-export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
+export default function AboutModal({ isOpen, onClose, isDarkMode = false }: AboutModalProps) {
   const [isVisible, setIsVisible] = useState(false)
   const modalRef = useRef<HTMLDivElement>(null)
 
@@ -77,9 +78,11 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
         ref={modalRef}
         className={`relative transition-all duration-300 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
         style={{
-          backgroundColor: '#FFFFFF',
+          backgroundColor: isDarkMode ? '#1C1C1E' : '#FFFFFF',
           borderRadius: '3.67px',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          boxShadow: isDarkMode 
+            ? '0 25px 50px -12px rgba(0, 0, 0, 0.5)' 
+            : '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
           maxWidth: '600px',
           width: '90%',
           maxHeight: '80vh',
@@ -90,14 +93,14 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
         <div 
           className="flex items-center justify-between px-4 py-3 border-b"
           style={{ 
-            backgroundColor: '#AFB0B3',
-            borderColor: '#E5E5E5'
+            backgroundColor: isDarkMode ? '#2C2C2E' : '#AFB0B3',
+            borderColor: isDarkMode ? '#3A3A3C' : '#E5E5E5'
           }}
         >
           <h2 
             className="text-lg font-medium"
             style={{ 
-              color: '#374151',
+              color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : '#374151',
               fontFamily: 'IBM Plex Sans, sans-serif'
             }}
           >
@@ -151,7 +154,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 minHeight: '400px',
                 scrollbarWidth: 'none',
                 msOverflowStyle: 'none',
-                backgroundColor: '#FDFDF8'
+                backgroundColor: isDarkMode ? '#1C1C1E' : '#FDFDF8'
               }}
             >
           {/* Logo and Header */}
@@ -166,7 +169,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
             <h1 
               className="text-2xl font-bold mb-4"
               style={{ 
-                color: '#000000',
+                color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : '#000000',
                 fontFamily: 'IBM Plex Sans, sans-serif'
               }}
             >
@@ -179,7 +182,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
             <p 
               className="text-base leading-relaxed"
               style={{ 
-                color: '#374151',
+                color: isDarkMode ? 'rgba(255, 255, 255, 0.8)' : '#374151',
                 fontFamily: 'IBM Plex Sans, sans-serif'
               }}
             >
@@ -189,7 +192,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
             <p 
               className="text-base leading-relaxed"
               style={{ 
-                color: '#374151',
+                color: isDarkMode ? 'rgba(255, 255, 255, 0.8)' : '#374151',
                 fontFamily: 'IBM Plex Sans, sans-serif'
               }}
             >
@@ -199,7 +202,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
             <p 
               className="text-base leading-relaxed"
               style={{ 
-                color: '#374151',
+                color: isDarkMode ? 'rgba(255, 255, 255, 0.8)' : '#374151',
                 fontFamily: 'IBM Plex Sans, sans-serif'
               }}
             >
@@ -213,7 +216,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
             <div 
               className="p-4 relative overflow-hidden group"
               style={{ 
-                backgroundColor: '#F7F7F9',
+                backgroundColor: isDarkMode ? '#2C2C2E' : '#F7F7F9',
                 borderRadius: '32px',
                 height: '240px',
                 transition: 'all 0.3s ease-in-out'
@@ -263,7 +266,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                   <div 
                     className="font-semibold transition-colors duration-300"
                     style={{ 
-                      color: '#000000',
+                      color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : '#000000',
                       fontFamily: 'IBM Plex Sans, sans-serif'
                     }}
                   >
@@ -272,7 +275,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                   <div 
                     className="text-sm transition-colors duration-300"
                     style={{ 
-                      color: '#6B7280',
+                      color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : '#6B7280',
                       fontFamily: 'IBM Plex Sans, sans-serif'
                     }}
                   >
@@ -294,7 +297,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
               <p 
                 className="text-lg mb-8 transition-colors duration-300 group-hover:text-white"
                 style={{ 
-                  color: '#374151',
+                  color: isDarkMode ? 'rgba(255, 255, 255, 0.8)' : '#374151',
                   fontFamily: 'IBM Plex Sans, sans-serif'
                 }}
               >
@@ -306,9 +309,9 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 className="w-full py-3 px-4 rounded-full font-medium transition-all duration-300"
                 style={{
                   backgroundColor: 'transparent',
-                  color: '#000000',
+                  color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : '#000000',
                   fontFamily: 'IBM Plex Sans, sans-serif',
-                  border: '2px solid #000000'
+                  border: isDarkMode ? '2px solid rgba(255, 255, 255, 0.9)' : '2px solid #000000'
                 }}
               >
                 Read my tweets
@@ -320,8 +323,8 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
             <div 
               className="p-4 border relative overflow-hidden"
               style={{ 
-                backgroundColor: '#F9FAFB',
-                borderColor: '#E5E7EB',
+                backgroundColor: isDarkMode ? '#2C2C2E' : '#F9FAFB',
+                borderColor: isDarkMode ? '#3A3A3C' : '#E5E7EB',
                 borderRadius: '32px'
               }}
             >

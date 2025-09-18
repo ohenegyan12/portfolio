@@ -53,9 +53,11 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
             style={{
               width: '900px',
               height: '600px',
-              background: '#FFFFFF',
+              background: isDarkMode ? '#1C1C1E' : '#FFFFFF',
               borderRadius: '26px',
-              boxShadow: '0 0 0 1px rgba(0, 0, 0, 0.23), 0 16px 48px rgba(0, 0, 0, 0.35)',
+              boxShadow: isDarkMode 
+                ? '0 0 0 1px rgba(255, 255, 255, 0.1), 0 16px 48px rgba(0, 0, 0, 0.5)' 
+                : '0 0 0 1px rgba(0, 0, 0, 0.23), 0 16px 48px rgba(0, 0, 0, 0.35)',
               border: 'none'
             }}
           >
@@ -140,7 +142,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                   <div 
                     className="absolute inset-0"
                     style={{
-                      background: '#FFFFFF',
+                      background: isDarkMode ? '#2C2C2E' : '#FFFFFF',
                       borderRadius: '18px'
                     }}
                   />
@@ -149,7 +151,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                   <div 
                     className="absolute inset-0"
                     style={{
-                      background: 'rgba(245, 245, 245, 0.67)',
+                      background: isDarkMode ? 'rgba(44, 44, 46, 0.67)' : 'rgba(245, 245, 245, 0.67)',
                       borderRadius: '18px'
                     }}
                   />
@@ -158,7 +160,9 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                   <div 
                     className="absolute inset-0 pointer-events-none"
                     style={{
-                      background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.1) 30%, transparent 70%)',
+                      background: isDarkMode 
+                        ? 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 30%, transparent 70%)'
+                        : 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.1) 30%, transparent 70%)',
                       borderRadius: '18px'
                     }}
                   />
@@ -180,7 +184,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                       <h3 
                         className="text-left"
                         style={{
-                          color: 'rgba(0, 0, 0, 0.5)',
+                          color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.5)',
                           fontSize: '11px',
                           fontWeight: '700',
                           fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
@@ -232,7 +236,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'rgba(0, 0, 0, 0.85)',
+                              color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
                               marginRight: '10px'
                             }}
                           >
@@ -243,12 +247,24 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
 
                       {/* Desktop */}
                       <div 
-                        className="flex items-center cursor-pointer transition-colors duration-150"
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
                         style={{
                           width: '224px',
                           height: '24px',
                           paddingLeft: '6px',
                           marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const img = e.currentTarget.querySelector('img')
+                          const span = e.currentTarget.querySelector('span')
+                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const img = e.currentTarget.querySelector('img')
+                          const span = e.currentTarget.querySelector('span')
+                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = 'white'
                         }}
                       >
                         <div 
@@ -269,17 +285,19 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             alt="Desktop" 
                             width="14" 
                             height="14" 
+                            className="transition-all duration-150"
                             style={{ 
                               marginRight: '4px',
-                              filter: 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(85%) contrast(100%)'
+                              filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
                             }}
                           />
                           <span 
+                            className="transition-colors duration-150"
                             style={{
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'rgba(0, 0, 0, 0.85)',
+                              color: 'white',
                               marginRight: '10px'
                             }}
                           >
@@ -290,12 +308,24 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
 
                       {/* Documents */}
                       <div 
-                        className="flex items-center cursor-pointer transition-colors duration-150"
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
                         style={{
                           width: '224px',
                           height: '24px',
                           paddingLeft: '6px',
                           marginBottom: '2px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const img = e.currentTarget.querySelector('img')
+                          const span = e.currentTarget.querySelector('span')
+                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const img = e.currentTarget.querySelector('img')
+                          const span = e.currentTarget.querySelector('span')
+                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = 'white'
                         }}
                       >
                         <div 
@@ -316,17 +346,19 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             alt="Documents" 
                             width="14" 
                             height="14" 
+                            className="transition-all duration-150"
                             style={{ 
                               marginRight: '4px',
-                              filter: 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(85%) contrast(100%)'
+                              filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
                             }}
                           />
                           <span 
+                            className="transition-colors duration-150"
                             style={{
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'rgba(0, 0, 0, 0.85)',
+                              color: 'white',
                               marginRight: '10px'
                             }}
                           >
@@ -337,11 +369,23 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
 
                       {/* Downloads */}
                       <div 
-                        className="flex items-center cursor-pointer transition-colors duration-150"
+                        className="flex items-center cursor-pointer transition-colors duration-150 group"
                         style={{
                           width: '224px',
                           height: '24px',
                           paddingLeft: '6px'
+                        }}
+                        onMouseEnter={(e) => {
+                          const img = e.currentTarget.querySelector('img')
+                          const span = e.currentTarget.querySelector('span')
+                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = 'black'
+                        }}
+                        onMouseLeave={(e) => {
+                          const img = e.currentTarget.querySelector('img')
+                          const span = e.currentTarget.querySelector('span')
+                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = 'white'
                         }}
                       >
                         <div 
@@ -362,17 +406,19 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             alt="Downloads" 
                             width="16" 
                             height="16" 
+                            className="transition-all duration-150"
                             style={{ 
                               marginRight: '4px',
-                              filter: 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(85%) contrast(100%)'
+                              filter: 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
                             }}
                           />
                           <span 
+                            className="transition-colors duration-150"
                             style={{
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'rgba(0, 0, 0, 0.85)',
+                              color: 'white',
                               marginRight: '10px'
                             }}
                           >
@@ -487,7 +533,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                         fontSize: '15px',
                         fontWeight: 'bold',
                         lineHeight: '16px',
-                        color: 'rgba(0, 0, 0, 0.85)',
+                        color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
                         margin: 0,
                         display: 'flex',
                         alignItems: 'center'
@@ -723,7 +769,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                   >
                     {/* Name Column */}
                     <img 
-                      src="/images/name-column.svg" 
+                      src={isDarkMode ? "/images/name-column-dark.svg" : "/images/name-column.svg"} 
                       alt="Name" 
                       width="208" 
                       height="28"
@@ -731,7 +777,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                     
                     {/* Date Modified Column */}
                     <img 
-                      src="/images/date-modified.svg" 
+                      src={isDarkMode ? "/images/date-column-dark.svg" : "/images/date-modified.svg"} 
                       alt="Date Modified" 
                       width="190" 
                       height="28"
@@ -739,7 +785,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                     
                     {/* Size Column */}
                     <img 
-                      src="/images/size-column.svg" 
+                      src={isDarkMode ? "/images/size-column-dark.svg" : "/images/size-column.svg"} 
                       alt="Size" 
                       width="100" 
                       height="28"
@@ -747,7 +793,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                     
                     {/* Kind Column */}
                     <img 
-                      src="/images/kind-column.svg" 
+                      src={isDarkMode ? "/images/kind-column-dark.svg" : "/images/kind-column.svg"} 
                       alt="Kind" 
                       width="160" 
                       height="28"
@@ -857,7 +903,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                           fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                           fontSize: '13px',
                           fontWeight: '500',
-                          color: isSelected ? '#FFFFFF' : 'rgba(0, 0, 0, 0.85)',
+                          color: isSelected ? '#FFFFFF' : (isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'),
                           display: 'flex',
                           alignItems: 'center'
                         }}
@@ -884,7 +930,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                           fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                           fontSize: '13px',
                           fontWeight: '500',
-                          color: isSelected ? '#FFFFFF' : 'rgba(0, 0, 0, 0.5)',
+                          color: isSelected ? '#FFFFFF' : (isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.5)'),
                           display: 'flex',
                           alignItems: 'center'
                         }}
@@ -919,7 +965,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                           fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                           fontSize: '13px',
                           fontWeight: '500',
-                          color: isSelected ? '#FFFFFF' : 'rgba(0, 0, 0, 0.5)',
+                          color: isSelected ? '#FFFFFF' : (isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.5)'),
                           display: 'flex',
                           alignItems: 'center'
                         }}
@@ -947,7 +993,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                           fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                           fontSize: '13px',
                           fontWeight: '500',
-                          color: isSelected ? '#FFFFFF' : 'rgba(0, 0, 0, 0.5)',
+                          color: isSelected ? '#FFFFFF' : (isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.5)'),
                           display: 'flex',
                           alignItems: 'center'
                         }}
@@ -989,13 +1035,15 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                         width: '260px',
                         height: '262px',
                         borderRadius: '34px',
-                        background: 'rgba(245, 245, 245, 1)',
+                        background: isDarkMode ? 'rgba(44, 44, 46, 1)' : 'rgba(245, 245, 245, 1)',
                         backdropFilter: 'blur(20px) saturate(180%)',
                         padding: '16px',
                         display: 'flex',
                         flexDirection: 'column',
                         justifyContent: 'space-between',
-                        boxShadow: '0 0 1px rgba(0, 0, 0, 0.2), 0 17px 45px rgba(0, 0, 0, 0.5)'
+                        boxShadow: isDarkMode 
+                          ? '0 0 1px rgba(255, 255, 255, 0.1), 0 17px 45px rgba(0, 0, 0, 0.7)' 
+                          : '0 0 1px rgba(0, 0, 0, 0.2), 0 17px 45px rgba(0, 0, 0, 0.5)'
                       }}
                     >
                       {/* Icon Container */}
@@ -1032,7 +1080,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             fontSize: '13px',
                             fontWeight: 'bold',
                             lineHeight: '16px',
-                            color: 'rgba(0, 0, 0, 0.85)',
+                            color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
                             display: 'flex',
                             alignItems: 'center'
                           }}
@@ -1049,13 +1097,13 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             fontSize: '11px',
                             fontWeight: '400',
                             lineHeight: '14px',
-                            color: 'rgba(0, 0, 0, 0.85)',
+                            color: isDarkMode ? 'rgba(255, 255, 255, 0.8)' : 'rgba(0, 0, 0, 0.85)',
                             display: 'flex',
                             alignItems: 'flex-start',
                             marginTop: '8px'
                           }}
                         >
-                          This portfolio includes recent projects, experiments, and case studies. You can open it in your browser to explore interactively, or download a copy to keep for later.
+                          You&apos;re opening the non-interactive PDF of my portfolio. It includes recent work and the PDF version of my resume.
                         </div>
                       </div>
                       
@@ -1071,8 +1119,8 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                             fontSize: '13px',
                             fontWeight: '500',
-                            color: 'rgba(0, 0, 0, 0.85)',
-                            backgroundColor: '#999999',
+                            color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                            backgroundColor: isDarkMode ? '#666666' : '#999999',
                             border: 'none',
                             cursor: 'pointer',
                             transition: 'all 0.2s ease'

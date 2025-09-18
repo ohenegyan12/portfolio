@@ -8,6 +8,7 @@ import Calendar from '../components/Calendar'
 import AboutModal from '../components/AboutModal'
 import WelcomeAlert from '../components/WelcomeAlert'
 import Window from '../components/Window'
+import AppleMusicWindow from '../components/AppleMusicWindow'
 import { useTimeBasedBackground } from '../hooks/useTimeBasedBackground'
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
   const [showWelcomeAlert, setShowWelcomeAlert] = useState(false)
   const [isWindowOpen, setIsWindowOpen] = useState(false)
+  const [isAppleMusicOpen, setIsAppleMusicOpen] = useState(false)
   const { backgroundImage, isTransitioning } = useTimeBasedBackground()
   
   // Get background color based on time of day
@@ -29,6 +31,7 @@ export default function Home() {
 
   const handleLoaderComplete = () => {
     setIsLoading(false)
+    
     // Add a small delay before showing content to ensure smooth transition
     setTimeout(() => {
       setShowContent(true)
@@ -195,6 +198,13 @@ export default function Home() {
       <Window 
         isOpen={isWindowOpen}
         onClose={handleWindowClose}
+        isDarkMode={getBackgroundColor() === '#1a1a2e'}
+      />
+
+      {/* Apple Music Window */}
+      <AppleMusicWindow 
+        isOpen={isAppleMusicOpen}
+        onClose={() => setIsAppleMusicOpen(false)}
         isDarkMode={getBackgroundColor() === '#1a1a2e'}
       />
 
@@ -371,14 +381,15 @@ export default function Home() {
                 className="w-12 h-12 rounded-2xl cursor-pointer"
               />
 
-              {/* App Icon 15 */}
+              {/* App Icon 15 - Apple Music */}
               <motion.img
                 whileHover={{ scale: 1.2, y: -8 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 src={getBackgroundColor() === '#87CEEB' ? "/images/app-icon-15.png" : "/images/app-icon-dark-15.png"} 
-                alt="App 15" 
+                alt="Apple Music" 
                 className="w-12 h-12 rounded-2xl cursor-pointer"
+                onClick={() => setIsAppleMusicOpen(true)}
               />
 
               {/* App Icon 16 */}
