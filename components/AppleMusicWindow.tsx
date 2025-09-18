@@ -125,10 +125,10 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
     },
     {
       id: 103,
-      cover: '/images/cover-image-3.png',
-      coverSelected: '/images/cover-image-3-selected.png',
-      title: 'New Song 3',
-      artist: 'New Artist 3',
+      cover: '/images/new-cover-image-3.png',
+      coverSelected: '/images/new-cover-image-3.png',
+      title: 'Gimme Vibe ft Stonebwoy',
+      artist: 'Medikal',
       genre: 'HIP POP',
       year: '2025'
     }
@@ -399,6 +399,34 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
           setCurrentAudio(null)
         }
       }
+    } else if (selectedSong?.id === 103) { // Medikal - Gimme Vibe ft Stonebwoy song
+      if (isPlaying && currentAudio) {
+        // Pause the current audio
+        currentAudio.pause()
+        setIsPlaying(false)
+      } else {
+        // Stop any existing audio
+        if (currentAudio) {
+          currentAudio.pause()
+          currentAudio.currentTime = 0
+        }
+        
+        // Play new audio
+        const audio = new Audio('/songs/gimme-vibe.mp3')
+        setCurrentAudio(audio)
+        audio.play().then(() => {
+          setIsPlaying(true)
+          if (selectedSong) addToRecentlyPlayed(selectedSong)
+        }).catch(error => {
+          console.error('Error playing audio:', error)
+        })
+        
+        // Handle when audio ends
+        audio.onended = () => {
+          setIsPlaying(false)
+          setCurrentAudio(null)
+        }
+      }
     }
   }
 
@@ -570,6 +598,18 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                           paddingLeft: '6px',
                           marginBottom: '2px'
                         }}
+                        onMouseEnter={(e) => {
+                          if (currentView !== 'home') {
+                            const span = e.currentTarget.querySelector('span')
+                            if (span) span.style.color = 'black'
+                          }
+                        }}
+                        onMouseLeave={(e) => {
+                          if (currentView !== 'home') {
+                            const span = e.currentTarget.querySelector('span')
+                            if (span) span.style.color = isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'
+                          }
+                        }}
                       >
                         <div 
                           className="flex items-center transition-colors duration-150"
@@ -579,6 +619,16 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                             borderRadius: '8px',
                             backgroundColor: currentView === 'home' ? 'rgba(0, 0, 0, 0.2)' : 'transparent',
                             paddingLeft: '8px'
+                          }}
+                          onMouseEnter={(e) => {
+                            if (currentView !== 'home') {
+                              e.currentTarget.style.backgroundColor = 'white'
+                            }
+                          }}
+                          onMouseLeave={(e) => {
+                            if (currentView !== 'home') {
+                              e.currentTarget.style.backgroundColor = 'transparent'
+                            }
                           }}
                         >
                           <img 
@@ -596,7 +646,7 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                              color: currentView === 'home' ? 'white' : (isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'),
                               marginRight: '10px'
                             }}
                           >
@@ -619,22 +669,36 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                           marginBottom: '2px'
                         }}
                         onMouseEnter={(e) => {
+                          if (currentView !== 'new') {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = isDarkMode ? 'rgba(255, 255, 255, 1)' : 'rgba(0, 0, 0, 1)'
+                          if (span) span.style.color = 'black'
+                          }
                         }}
                         onMouseLeave={(e) => {
+                          if (currentView !== 'new') {
                           const span = e.currentTarget.querySelector('span')
                           if (span) span.style.color = isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'
+                          }
                         }}
                       >
                         <div 
-                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          className="flex items-center transition-colors duration-150"
                           style={{
                             width: '204px',
                             height: '24px',
                             borderRadius: '8px',
                             backgroundColor: currentView === 'new' ? 'rgba(0, 0, 0, 0.2)' : 'transparent',
                             paddingLeft: '8px'
+                          }}
+                          onMouseEnter={(e) => {
+                            if (currentView !== 'new') {
+                              e.currentTarget.style.backgroundColor = 'white'
+                            }
+                          }}
+                          onMouseLeave={(e) => {
+                            if (currentView !== 'new') {
+                              e.currentTarget.style.backgroundColor = 'transparent'
+                            }
                           }}
                         >
                           <img 
@@ -653,7 +717,7 @@ export default function AppleMusicWindow({ isOpen, onClose, isDarkMode = false }
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                              color: currentView === 'new' ? 'white' : (isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'),
                               marginRight: '10px'
                             }}
                           >
