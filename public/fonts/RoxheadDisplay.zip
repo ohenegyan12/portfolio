@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <script async src="https://fundingchoicesmessages.google.com/i/pub-1094451841583211?ers=1" nonce="H-Zfwdek8olNs2WsxLQL2w"></script><script nonce="H-Zfwdek8olNs2WsxLQL2w">(function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();</script>
+
+    
+            <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-K6ZXLTJ');</script>
+        <!-- End Google Tag Manager -->
+
+    
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=no">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta property="fb:app_id" content="778396135675985">
+
+    
+    
+
+    <link rel="dns-prefetch" href="//cufonfonts.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+
+    <link rel='preload' href='/assets/css/style.css?v=1756990610' as='style' />
+    <link rel='preload' href='/assets/js/app.min.js?v=1756990604' as='script' />
+
+
+
+
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="aGApAoc7LVHpjjbBW1PMyO2ilGhLKpzaKKUDYGLoj3hYAhtl3gpyIIXJR7Q6B4KindfCXx1zroJw3WYHNIS2PQ==">
+    <title>Not Found (#404)</title>
+
+    <style type="text/css">@font-face {font-family:Playfair Display;font-style:normal;font-weight:400;src:url(/cf-fonts/v/playfair-display/5.0.18/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Playfair Display;font-style:normal;font-weight:400;src:url(/cf-fonts/v/playfair-display/5.0.18/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Playfair Display;font-style:normal;font-weight:400;src:url(/cf-fonts/v/playfair-display/5.0.18/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Playfair Display;font-style:normal;font-weight:400;src:url(/cf-fonts/v/playfair-display/5.0.18/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Playfair Display;font-style:normal;font-weight:500;src:url(/cf-fonts/v/playfair-display/5.0.18/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Playfair Display;font-style:normal;font-weight:500;src:url(/cf-fonts/v/playfair-display/5.0.18/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Playfair Display;font-style:normal;font-weight:500;src:url(/cf-fonts/v/playfair-display/5.0.18/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Playfair Display;font-style:normal;font-weight:500;src:url(/cf-fonts/v/playfair-display/5.0.18/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Playfair Display;font-style:normal;font-weight:600;src:url(/cf-fonts/v/playfair-display/5.0.18/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Playfair Display;font-style:normal;font-weight:600;src:url(/cf-fonts/v/playfair-display/5.0.18/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Playfair Display;font-style:normal;font-weight:600;src:url(/cf-fonts/v/playfair-display/5.0.18/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Playfair Display;font-style:normal;font-weight:600;src:url(/cf-fonts/v/playfair-display/5.0.18/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Playfair Display;font-style:normal;font-weight:700;src:url(/cf-fonts/v/playfair-display/5.0.18/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Playfair Display;font-style:normal;font-weight:700;src:url(/cf-fonts/v/playfair-display/5.0.18/latin-ext/wght/normal.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Playfair Display;font-style:normal;font-weight:700;src:url(/cf-fonts/v/playfair-display/5.0.18/cyrillic/wght/normal.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Playfair Display;font-style:normal;font-weight:700;src:url(/cf-fonts/v/playfair-display/5.0.18/vietnamese/wght/normal.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}@font-face {font-family:Playfair Display;font-style:italic;font-weight:400;src:url(/cf-fonts/v/playfair-display/5.0.18/cyrillic/wght/italic.woff2);unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;font-display:swap;}@font-face {font-family:Playfair Display;font-style:italic;font-weight:400;src:url(/cf-fonts/v/playfair-display/5.0.18/latin/wght/italic.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Playfair Display;font-style:italic;font-weight:400;src:url(/cf-fonts/v/playfair-display/5.0.18/latin-ext/wght/italic.woff2);unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Playfair Display;font-style:italic;font-weight:400;src:url(/cf-fonts/v/playfair-display/5.0.18/vietnamese/wght/italic.woff2);unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB;font-display:swap;}</style>
+<link type="text/css" href="/assets/css/style.css?v=1756990610" rel="stylesheet" media="all"></head>
+<body class="">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6ZXLTJ"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+
+
+<header>
+    <div class="navbar-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <nav class="navbar navbar-expand-lg navbar-light navbar-header">
+
+
+                        <a title="Cufon Fonts | Download Free Fonts for Desktop & Webfonts"
+                           class="navbar-brand" href="/">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 413 82" enable-background="new 0 0 413 82"><style type="text/css">.st0{fill:#0066FF;} .st1{enable-background:new ;} .st2{fill:#FFFFFF;} .st3{fill:#6C6E74;}</style><g id="logo"><path class="st0" d="M23.4 6.9c47.7 0 180.5.1 207.7 0s59.6 68.1 13.2 68.1c-46.3 0-176.6-.5-202.9 0s-65.7-68.1-18-68.1z" id="bg"/><g id="logo_x5F_text"><g class="st1"><path class="st2" d="M49.3 43.7c0 7.1 1.3 10 9.1 10h.5c3.2 0 6-.5 8.8-1.3 1.1-.3 3.1 5 3.1 5.9 0 2.5-8.9 3.5-11.9 3.5h-.5c-12.3 0-18.3-4.1-18.3-16.6v-11.3c0-12.5 6-16.6 18.3-16.6h.5c3.1 0 11.9 1 11.9 3.5 0 .9-2 6.2-3.1 5.9-2.8-.8-5.6-1.4-8.8-1.4h-.5c-7.8 0-9.1 2.9-9.1 10v8.4zM104.4 18.9c0-1.3 5.2-1.7 6.8-1.7 1.1 0 2.2.9 2.2 1.9v26c0 12.5-5.9 16.6-18.4 16.6h-.5c-12.3 0-18.3-4.1-18.3-16.6v-26.2c0-1.3 5.2-1.7 6.8-1.7 1.1 0 2.2.9 2.2 1.9v24.6c0 7 1.6 10 9.3 10h.5c7.8 0 9.4-3 9.4-10v-24.8zM129.7 59.9c0 1-1.1 1.9-2.2 1.9-1.6 0-6.8-.4-6.8-1.6v-40.7c0-.9 1-1.6 2.2-1.6h25.1c1 0 1.6 1.1 1.6 2.1 0 1.5-.2 5.9-1.4 5.9h-18.4v9.2h14.9c.8 0 1.5 1.1 1.5 2.1 0 1.5-.1 5.9-1.3 5.9h-15.1v16.8zM171.4 61.7c-12.3 0-18.3-4.1-18.3-16.6v-11.2c0-12.5 6-16.6 18.3-16.6h.5c12.4 0 18.4 4.1 18.4 16.6v11.1c0 12.5-6 16.6-18.4 16.6h-.5zm-9-17.1c0 7 1.3 9.1 9.1 9.1h.5c7.7 0 9.1-2 9.1-9.1v-10.3c0-7-1.4-9.1-9.1-9.1h-.5c-7.7 0-9.1 2-9.1 9.1v10.3zM231.7 61.7c-1.6 0-5.9-.2-6.8-1.4l-19.1-27.2v26.7c0 1-1.1 1.9-2.2 1.9-1.5 0-6.7-.4-6.7-1.7v-41.6c0-1.2 5-1.3 6.6-1.3 1 0 1.8.9 2.3 1.6l19.1 27.2v-27.6c0-1.2 5.5-1.3 7.1-1.3 1.1 0 1.9.8 1.9 1.8v41.2c0 1.1-1.2 1.7-2.2 1.7z"/></g><g class="st1"><path class="st3" d="M285.6 60c0 .9-.5 1.7-1.4 1.7-1.3 0-4-.4-4-1.1v-41.5c0-.9.6-1.3 2-1.3h22.7c.7 0 1.4.5 1.4 1.3 0 1.2-.3 3.5-1 3.5h-19.7v14h16.6c.7 0 1.4.5 1.4 1.4 0 1.2-.4 3.4-1 3.4h-17v18.6zM308.8 40c0-8.5 3.5-11.3 11.9-11.3h.2c8.4 0 11.9 2.9 11.9 11.3v10.6c0 8.5-3.5 11.3-11.9 11.3h-.2c-8.4 0-11.9-2.9-11.9-11.3v-10.6zm12.2 17.4c5.8 0 6.8-2.5 6.8-7.9v-8.5c0-5.5-1.1-8-6.8-8h-.3c-5.8 0-6.8 2.5-6.8 8v8.5c0 5.4 1.1 7.9 6.8 7.9h.3zM358.7 41.1c0-3.8-.1-7.9-3.8-7.9-4.9 0-10 1.7-10 2.6v24.4c0 .8-.6 1.4-1.4 1.4-1.3 0-3.7-.2-3.7-1v-27c0-2.2 7-5.1 16-5.1 7.3 0 7.9 5.8 7.9 11v20.6c0 .8-.6 1.4-1.4 1.4-1.2 0-3.6-.2-3.6-1v-19.4zM378.5 33.9v19.3c0 2.2.7 3.8 3 3.8.9 0 1.8-.4 3.5-.9.6-.2 1.3 1.8 1.6 2.8.2.7-.2 1.3-.9 1.6-2 .8-3.1 1.3-5.6 1.3-3.5 0-6.6-1.9-6.6-7.8v-20h-4.2c-.7 0-1.1-.6-1.1-1.2 0-1.1.2-3.5 1.3-3.5h4v-8.3c0-.7 2.5-1 3.7-1 .8 0 1.4.6 1.4 1.4v7.9h6.6c.7 0 1.1.5 1.1 1.2 0 1.1-.2 3.5-1.3 3.5h-6.5zM399.6 57.3c3.1 0 6.8-.6 6.8-4 0-6.1-15.5-7.6-15.5-16.4 0-7.1 5.7-8.2 11.2-8.2 2.7 0 5 .3 7.3 1 .8.2 1.3.8 1.2 1.5-.2 1.1-.9 3.2-1.6 3.1-2.3-.6-4.6-1.1-6.9-1.1-3.4 0-6.1.8-6.1 3.7 0 5 15.5 6.5 15.5 16.5 0 6.8-5.6 8.5-11.7 8.5-2.8 0-6.7-.6-9.1-1.3-.8-.3-1.2-.8-1-1.6.2-1.1.9-3.1 1.6-2.9 2.5.5 5.3 1.2 8.3 1.2z"/></g></g></g></svg>                        </a>
+
+
+                        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsex">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+
+                        <div class="collapse navbar-collapse" id="collapsex">
+                            <div class="nav-search d-none d-lg-block">
+                                <form class="form-inline search-form" autocomplete="off" id="search-form" onsubmit="return false"
+                                      method="GET" action="/search">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    <input id="autocomplete" autocomplete="off" class="form-control" name="q"
+                                           value="" type="search"
+                                           placeholder="Search">
+                                </form>
+                            </div>
+
+                            <ul id="w0" class="navbar-nav nav-fill ml-auto pt-4 pt-lg-0 nav"><li class="nav-item"><a class="btn-light btn-submit-font nav-link" href="/account/font-submit">Submit a Font</a></li>
+<li class="nav-item"><a class="nav-link" href="/collections">Collections</a></li>
+<li class="dropdown nav-item"><a class="designer-tools-nav-btn dropdown-toggle nav-link" href="#" data-toggle="dropdown"><i class="fa-duotone fa-wrench mr-1"></i> Tools</a><div id="w1" class="dropdown-menu"><a class="dropdown-item" href="/background-remover"><i class="fa-regular fa-eraser mr-1"></i> Background Remover</a>
+<a class="dropdown-item" href="/tiny-image"><i class="fa-regular fa-layer-group mr-1"></i> TinyImage</a>
+<a class="dropdown-item" href="/unicode-character-table"><i class="fa-regular fa-table mr-1"></i> Character Table</a></div></li>
+<li class="nav-item"><a class="nav-link" href="/user/login">Log In / Sign Up</a></li></ul>
+
+                        </div>
+
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-search mx-3  d-lg-none">
+        <form class="form-inline search-form" autocomplete="off" id="search-form" onsubmit="return false"
+              method="GET" action="/search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="autocomplete" autocomplete="off" class="form-control" name="q"
+                   value="" type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+    <div class="navbar-category-bg shadow-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+
+                            <nav class="navbar-category w-100">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                    <ul class="navbar-category-menu nav flex-row flex-nowrap justify-content-lg-around  text-md-left">
+                                                                                    <li class="nav-item ">
+                                                <a class="nav-link"
+                                                   href="/category/serif"
+                                                   title="Free SERIF fonts">SERIF</a>
+                                            </li>
+                                                                                    <li class="nav-item ">
+                                                <a class="nav-link"
+                                                   href="/category/sans-serif"
+                                                   title="Free SANS-SERIF fonts">SANS-SERIF</a>
+                                            </li>
+                                                                                    <li class="nav-item ">
+                                                <a class="nav-link"
+                                                   href="/category/display"
+                                                   title="Free DISPLAY fonts">DISPLAY</a>
+                                            </li>
+                                                                                    <li class="nav-item ">
+                                                <a class="nav-link"
+                                                   href="/category/handwritten"
+                                                   title="Free HANDWRITTEN fonts">HANDWRITTEN</a>
+                                            </li>
+                                                                                    <li class="nav-item ">
+                                                <a class="nav-link"
+                                                   href="/category/monospaced"
+                                                   title="Free MONOSPACED fonts">MONOSPACED</a>
+                                            </li>
+                                                                                    <li class="nav-item ">
+                                                <a class="nav-link"
+                                                   href="/category/symbol"
+                                                   title="Free SYMBOL fonts">SYMBOL</a>
+                                            </li>
+                                                                            </ul>
+                                    </div>
+
+                                    <div class="col-lg-4  mt-sm-0">
+
+
+                                                                                    <ul class="d-none d-lg-flex nav flex-column flex-md-row justify-content-end text-md-left text-center">
+                                                <li class="nav-item ">
+                                                    <a class="nav-link position-relative btn-new-fonts"
+                                                       href="/new-fonts"
+                                                       title="New added fonts">NEW
+                                                        FONTS <span class="n-badge radius-3 red">0</span></a>
+                                                </li>
+                                            </ul>
+
+                                                                            </div>
+                                </div>
+                            </nav>
+
+
+                        </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+</header>
+
+
+
+
+
+
+
+<div class="layout">
+
+    
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="site-error mt-5 text-center">
+                <br>
+                <br>
+                <img src="/assets/img/monster.png">
+
+                <br>
+                <br>
+                <br>
+
+                                    <h1 class="ml6">
+  <span class="text-wrapper">
+    <span class="letters">Looks like you got lost...</span>
+  </span>
+                    </h1>
+
+
+                                            <p class="sub-title">The page you're looking for doesn't exists.</p>
+
+                    
+                
+
+                                    <br>
+                    <br>
+                    <a href="" class="btn btn-primary " title="">Discover other <b></b> fonts</a>
+
+                                <br>
+                <br>
+                <a href="/" class="btn btn-outline-secondary btn-sm " title="" id="back-btn">Go back
+                    Home</a>
+
+                <br>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+
+
+<div class="modal fade" id="alertModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{title}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>{{message}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="collectionModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add to List</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <script type="text/html" id="collectionModalTemplate">
+
+                    <div class="list-group overflow-auto" style="max-height: 300px">
+
+                        {{^collections}}
+                        <p class="text-muted text-center">Your list is empty</p>
+                        {{/collections}}
+
+                        {{#collections}}
+                        <a href="#" data-collection-id="{{id}}"
+                           class="list-group-item list-group-item-action collection-item d-flex justify-content-start align-items-center">{{title}}
+                            {{#in_collection}}
+                            &nbsp;<i class="fad fa-check"></i>
+                            {{/in_collection}}
+                            <button data-collection-id="{{id}}"
+                                    class="btn btn-sm btn-outline-light delete-collection ml-auto">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </a>
+
+                        {{/collections}}
+
+                    </div>
+
+                    <br>
+                    <div class="alert alert-danger d-none"></div>
+
+
+                    <form method="post" id="add-to-collection-form">
+                        <div class="input-group ">
+                            <input type="hidden" name="font_family_id" value="">
+                            <input type="hidden" name="act" value="create">
+                            <input class="form-control" value="" name="name" type="text"
+                                   placeholder="Create new public list">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary"
+                                        type="submit">Add</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </script>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="loading-screen">
+
+    <div class="centerx">
+        <div class="logo-anim text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 410 68" id="S14UY8-Dl7"><style>@-webkit-keyframes BJOUY8ZPeQ_Animation{0%{opacity:  1;}50%{opacity:  0.6;}100%{opacity:  1;}}@keyframes BJOUY8ZPeQ_Animation{0%{opacity:  1;}50%{opacity:  0.6;}100%{opacity:  1;}}@-webkit-keyframes r1ULFL-vgQ_r1X7K-PgQ_Animation{0%{-webkit-transform:  translate(0px, 0px);transform:  translate(0px, 0px);}50%{-webkit-transform:  translate(10px, 0px);transform:  translate(10px, 0px);}100%{-webkit-transform:  translate(0px, 0px);transform:  translate(0px, 0px);}}@keyframes r1ULFL-vgQ_r1X7K-PgQ_Animation{0%{-webkit-transform:  translate(0px, 0px);transform:  translate(0px, 0px);}50%{-webkit-transform:  translate(10px, 0px);transform:  translate(10px, 0px);}100%{-webkit-transform:  translate(0px, 0px);transform:  translate(0px, 0px);}}@-webkit-keyframes BJOUY8ZPeQ_BkWu_-DeQ_Animation{0%{-webkit-transform:  rotate(0deg);transform:  rotate(0deg);}50%{-webkit-transform:  rotate(-5deg);transform:  rotate(-5deg);}100%{-webkit-transform:  rotate(0deg);transform:  rotate(0deg);}}@keyframes BJOUY8ZPeQ_BkWu_-DeQ_Animation{0%{-webkit-transform:  rotate(0deg);transform:  rotate(0deg);}50%{-webkit-transform:  rotate(-5deg);transform:  rotate(-5deg);}100%{-webkit-transform:  rotate(0deg);transform:  rotate(0deg);}}@-webkit-keyframes r1P8KUZDlX_Animation{0%{opacity:  0.4;}50%{opacity:  1;}100%{opacity:  0.4;}}@keyframes r1P8KUZDlX_Animation{0%{opacity:  0.4;}50%{opacity:  1;}100%{opacity:  0.4;}}#S14UY8-Dl7 *{-webkit-animation-duration:  1s;animation-duration:  1s;-webkit-animation-iteration-count:  infinite;animation-iteration-count:  infinite;-webkit-animation-timing-function:  cubic-bezier(0, 0, 1, 1);animation-timing-function:  cubic-bezier(0, 0, 1, 1);}#H1H8FIWDl7{-webkit-transform:  translate(-58.978px, -31.9px);transform:  translate(-58.978px, -31.9px);}#r1ULFL-vgQ{fill: #006dd9;-webkit-transform:  translate(83px, 31.421px);transform:  translate(83px, 31.421px);}#r1P8KUZDlX{fill: #fff;-webkit-transform:  translate(95px, 86px);transform:  translate(95px, 86px);-webkit-transform-origin:  50% 50%;transform-origin:  50% 50%;transform-box:  fill-box;opacity:  0.1;-webkit-animation-name:  r1P8KUZDlX_Animation;animation-name:  r1P8KUZDlX_Animation;}#BJOUY8ZPeQ{fill: #6c6e74;-webkit-transform:  translate(334px, 86px);transform:  translate(334px, 86px);-webkit-animation-name:  BJOUY8ZPeQ_Animation;animation-name:  BJOUY8ZPeQ_Animation;-webkit-transform-origin:  50% 50%;transform-origin:  50% 50%;transform-box:  fill-box;}#r1ULFL-vgQ_H1Q2DZPx7{-webkit-transform-origin:  50% 50%;transform-origin:  50% 50%;transform-box:  fill-box;}#r1ULFL-vgQ_ryakdWvlm{-webkit-transform-origin:  50% 50%;transform-origin:  50% 50%;transform-box:  fill-box;}#BJOUY8ZPeQ_BkWu_-DeQ{-webkit-transform-origin:  50% 50%;transform-origin:  50% 50%;transform-box:  fill-box;-webkit-animation-name:  BJOUY8ZPeQ_BkWu_-DeQ_Animation;animation-name:  BJOUY8ZPeQ_BkWu_-DeQ_Animation;}#r1ULFL-vgQ_r1X7K-PgQ{-webkit-animation-name:  r1ULFL-vgQ_r1X7K-PgQ_Animation;animation-name:  r1ULFL-vgQ_r1X7K-PgQ_Animation;-webkit-transform-origin:  50% 50%;transform-origin:  50% 50%;transform-box:  fill-box;}</style><defs/><g id="H1H8FIWDl7"><g id="r1ULFL-vgQ_r1X7K-PgQ" data-animator-group="true" data-animator-type="0"><path d="M-1.631.479c47.738,0,180.52.136,207.731,0s59.562,68.1,13.228,68.1-176.623-.528-202.92,0S-49.369.479-1.631.479Z" id="r1ULFL-vgQ"/></g><path d="M12.24-25.74c0-7.08,1.26-10.02,9.06-10.02h.48a30.154,30.154,0,0,1,8.82,1.38c1.14.3,3.12-5.04,3.12-5.94,0-2.46-8.88-3.48-11.94-3.48H21.3C9-43.8,3-39.66,3-27.18V-15.9C3-3.42,9,.72,21.3.72h.48C24.84.72,33.72-.3,33.72-2.76c0-.9-1.98-6.24-3.12-5.94a32.289,32.289,0,0,1-8.82,1.32H21.3c-7.8,0-9.06-2.88-9.06-9.96Zm55.14,8.4c0,6.96-1.56,9.96-9.36,9.96h-.48c-7.74,0-9.3-3-9.3-9.96v-24.6a2.22,2.22,0,0,0-2.22-1.86c-1.56,0-6.78.36-6.78,1.68V-15.9c0,12.48,6,16.62,18.3,16.62h.48C70.44.72,76.38-3.42,76.38-15.9V-41.94a2.22,2.22,0,0,0-2.22-1.86c-1.56,0-6.78.36-6.78,1.68Zm25.32-.6h15.12c1.2,0,1.32-4.44,1.32-5.94,0-1.02-.66-2.1-1.5-2.1H92.7v-9.18h18.42c1.26,0,1.44-4.44,1.44-5.94,0-1.02-.66-2.1-1.62-2.1H85.86c-1.14,0-2.16.66-2.16,1.56V-.9C83.7.36,88.92.72,90.48.72A2.174,2.174,0,0,0,92.7-1.14ZM134.88.66c12.36,0,18.36-4.14,18.36-16.62V-27.18c0-12.48-6-16.62-18.36-16.62h-.48c-12.3,0-18.3,4.14-18.3,16.62v11.22c0,12.48,6,16.62,18.3,16.62ZM125.34-26.7c0-7.02,1.32-9.06,9.06-9.06h.48c7.74,0,9.12,2.04,9.12,9.06v10.26c0,7.02-1.38,9.06-9.12,9.06h-.48c-7.74,0-9.06-2.04-9.06-9.06ZM196.86-.84V-42A1.783,1.783,0,0,0,195-43.8c-1.62,0-7.08.06-7.08,1.26v27.6L168.78-42.18a3.4,3.4,0,0,0-2.34-1.62c-1.62,0-6.6.06-6.6,1.26V-.96c0,1.32,5.22,1.68,6.72,1.68a2.22,2.22,0,0,0,2.22-1.86v-26.7L187.92-.66c.9,1.14,5.16,1.38,6.78,1.38C195.72.72,196.86.12,196.86-.84Z" id="r1P8KUZDlX"/><g id="BJOUY8ZPeQ_BkWu_-DeQ" data-animator-group="true" data-animator-type="1"><path d="M9.54-19.56H26.52c.6,0,.96-2.22.96-3.42a1.357,1.357,0,0,0-1.38-1.38H9.54V-38.34H29.22c.66,0,.96-2.28.96-3.48a1.307,1.307,0,0,0-1.38-1.32H6.12c-1.38,0-1.98.36-1.98,1.26V-.36C4.14.3,6.78.72,8.1.72A1.523,1.523,0,0,0,9.54-.96Zm23.22,9.12C32.76-1.98,36.3.9,44.7.9h.18c8.4,0,11.94-2.88,11.94-11.34V-21c0-8.46-3.54-11.34-11.94-11.34H44.7c-8.4,0-11.94,2.88-11.94,11.34ZM44.64-3.6c-5.76,0-6.84-2.46-6.84-7.86v-8.46c0-5.46,1.08-7.98,6.84-7.98h.3c5.76,0,6.84,2.52,6.84,7.98v8.46c0,5.4-1.08,7.86-6.84,7.86ZM82.68-.24c0,.72,2.4.96,3.6.96A1.386,1.386,0,0,0,87.72-.72V-21.3c0-5.22-.54-11.04-7.86-11.04-8.94,0-15.96,2.88-15.96,5.1v27c0,.72,2.4.96,3.66.96A1.373,1.373,0,0,0,68.94-.72V-25.14c0-.9,5.04-2.58,9.96-2.58,3.66,0,3.78,4.02,3.78,7.86ZM108.9-27.12c1.08,0,1.26-2.4,1.26-3.54a1.107,1.107,0,0,0-1.08-1.2h-6.6v-7.92a1.358,1.358,0,0,0-1.38-1.38c-1.2,0-3.72.24-3.72.96v8.34H93.36c-1.08,0-1.26,2.4-1.26,3.54a1.141,1.141,0,0,0,1.08,1.2h4.2V-7.08c0,5.88,3.12,7.8,6.6,7.8a11.858,11.858,0,0,0,5.64-1.26,1.3,1.3,0,0,0,.9-1.56c-.24-1.02-.96-3-1.56-2.82a15.507,15.507,0,0,1-3.48.9c-2.34,0-3-1.62-3-3.84V-27.12ZM115.2-5.1c-.66-.18-1.38,1.86-1.56,2.94-.18.84.24,1.32,1.02,1.62A39.829,39.829,0,0,0,123.78.72c6.12,0,11.7-1.74,11.7-8.52,0-9.96-15.54-11.52-15.54-16.5,0-2.88,2.7-3.66,6.12-3.66a27.537,27.537,0,0,1,6.9,1.08c.66.18,1.32-1.98,1.56-3.06.12-.72-.42-1.26-1.2-1.5a25.02,25.02,0,0,0-7.26-.96c-5.46,0-11.16,1.08-11.16,8.22,0,8.88,15.54,10.38,15.54,16.44,0,3.42-3.78,4.02-6.84,4.02A31.15,31.15,0,0,1,115.2-5.1Z" id="BJOUY8ZPeQ"/></g></g><script>(function(){var a=document.querySelector('#S14UY8-Dl7'),b=a.querySelectorAll('style'),c=function(d){b.forEach(function(f){var g=f.textContent;g&amp;&amp;(f.textContent=g.replace(/transform-box:[^;\r\n]*/gi,'transform-box: '+d))})};c('initial'),window.requestAnimationFrame(function(){return c('fill-box')})})();</script></svg>            <br>
+            <h5 class="mt-3">Progress is running, please wait...</h5>
+        </div>
+    </div>
+
+
+</div>
+
+
+<footer style="margin-top: 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+                <h5>FONT CATEGORIES</h5>
+
+                <ul class=""><li><a href="/category/serif">SERIF</a></li>
+<li><a href="/category/sans-serif">SANS-SERIF</a></li>
+<li><a href="/category/display">DISPLAY</a></li>
+<li><a href="/category/symbol">SYMBOL</a></li>
+<li><a href="/category/monospaced">MONOSPACED</a></li>
+<li><a href="/category/handwritten">HANDWRITTEN</a></li></ul>                <br>
+
+            </div>
+
+            <div class="col-md-5">
+
+                <h5>POPULAR TAGS</h5>
+
+
+                                    <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/Script" title="">#Script</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/Retro" title="">#Retro</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/Modern" title="">#Modern</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/Serif" title="">#Serif</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/Calligraphy" title="">#Calligraphy</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/logo" title="">#logo</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/handwriting" title="">#handwriting</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/Fancy" title="">#Fancy</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/Basic" title="">#Basic</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/bold" title="">#bold</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/Techno" title="">#Techno</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/Brush" title="">#Brush</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/Sans+serif" title="">#Sans serif</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/cute" title="">#cute</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/Cartoon" title="">#Cartoon</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/Decorative" title="">#Decorative</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/Various" title="">#Various</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/Handwritten" title="">#Handwritten</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/wedding" title="">#wedding</a>
+                                        <a class="btn btn-sm btn-outline-secondary mr-2 mb-2"
+                       href="/search/Display" title="">#Display</a>
+                    
+
+            </div>
+
+            <div class="col-md-4">
+             
+
+                <div class="mt-4">
+                    <ul class=""><li><a href="/dmca">DMCA</a></li>
+<li><a href="/privacy-policy">Privacy Policy</a></li>
+<li><a href="/terms-of-service">Terms of Service</a></li>
+<li><a href="/contactus">Contact Us</a></li></ul>  
+                </div>
+
+                <div class="card h-100 d-none">
+
+                    <div class="card-body">
+                        <h4 class="card-title">Share your fonts with the world</h4>
+                        <p class="card-text">Upload your fonts to cufonfonts.com and archive them for use by all users around the world.</p>
+                        <a href="/site/submit-font?mt=1758067914"
+                           class="btn btn-primary btn-md">Upload your fonts</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="copyright text-muted">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    © 2025 CufonFonts.com. All right reserved.
+                </div>
+                <div class="col-md-6 text-md-right">
+
+                    <small>Last Update 17-09-2025 03:11</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+
+
+
+
+
+<script src="/assets/js/jquery.min.js?v=1732456628"></script>
+<script src="/assets/fm/5005c14d/yii.js?v=1741138619"></script>
+<script src="/assets/js/app.min.js?v=1756990604"></script>
+<script>jQuery(function ($) {
+
+
+    $(function () {
+
+
+        $('.ml6 .letters').each(function () {
+            $(this).html($(this).text().replace(/([\w.])/g, "<span class='letter'>$&</span>"));
+        });
+
+        anime.timeline({loop: false})
+            .add({
+                targets: '.ml6 .letter',
+                translateY: ["1.1em", 0],
+                translateZ: 0,
+                duration: 750,
+                delay: function (el, i) {
+                    return 50 * i;
+                }
+            });
+
+
+
+    });
+
+
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('$.v("/x/1M-g",{\'44\':\'43\'},b(f){1W=f.g.1W;j(f.g.1V>0){$(".1o-L-1c").1x("1U").V("w").r(f.g.1V)}W{$(".1o-L-1c").42("1U").V("w").r("0")}},"t");$("B.1T").1T();h I=o.41(\'40\').3Z;$(o).m("y",".1o-N-u",b(e){j(3Y(3X)!=="3W"){j(!1m.1l){e.n();h $c=$(c);3V.3U({1G:\'3T 3S!\',r:"1S 3R 1R 1c 1O 1Q 1L 1P 3Q 3P 3O 3N-3M 3L m 3K.3J."+"<1n><1n><p 1h=\'u-3I:3H;3G:#3F\'>1S 3E 3D 3C 1R 1c 1Q 1P <1n>3B 1O 3A!</p>",3z:\'3y\',3x:1d,3w:\'h(--3v)\',3u:\'#3t\',3s:\'3r\',3q:\'3p 3o, 3n 3m!\'}).3l((f)=>{j(f.3k){1m.1l=1d;E.D=$c.K("1w")}W{1m.1l=1j}})}}});$(o).m("y","*[g-l]",b(e){e.n();h $c=$(c);$18=$c.g("u-1N-1a");$.v("/x/3j-t",{19:$c.g("u-1N-1a")},b(f){j(f.F){$("#H").G();h s=16.Z(I).Y(f.g);$("#H .G-X").r(s)}W{E.D=\'/1M/3i\'}},"t")});$(o).m("y",".l-3h",b(e){e.n();h $c=$(c);$(".A-z").1k();$.v("/x/1I-1H-l",{1J:$c.g("l-1a"),\'19\':$18},b(f){$(".A-z").U();j(f.F){h s=16.Z(I).Y(f.g);$("#H .G-X").r(s)}},"t")});$(o).m("y","*[g-1b]",b(e){Q 1b($(c).g("1b"))});$(o).m("y",".1K-l",b(e){e.3g();e.n();h $c=$(c);j(1b(\'3f 1L 3e ?\')){$(".A-z").1k();$.v("/x/1K-l",{1J:$c.g("l-1a"),\'19\':$18},b(f){$(".A-z").U();j(f.F){h s=16.Z(I).Y(f.g);$("#H .G-X").r(s)}},"t")}});$(o).m("N","#1I-1H-l-1e",b(e){e.n();h $c=$(c);$(".A-z").1k();$.v("/x/3d-L-l",{19:$18,1G:$c.V("1F[1i=M]").1E()},b(f){$(".A-z").U();j(f.F){h s=16.Z(I).Y(f.g);$("#H .G-X").r(s)}W{3c(f.3b)}},"t")});$(".O-1e").m("N",b(e){e.n();E.D=\'/O/\'+$(c).V("1F[3a=q]").1E()});$("#U-39").y(b(e){e.n();38.37(\'36\',\'1\',{35:7});$("#34").1p()});$(\'#P\').33({32:"/x/P",31:30,1g:2Z,2Y:1,2X:1j,2W:1j,2V:2U,2T:b(k,2S){j(k.g.1i==\'l\'){Q\'<S 1D="0 0 24 24" 1h="1C:T;1g:T"><1B d="2R.5 2Q.5 1.5 0 0 0 7 5.5 1.5 1.5 0 0 0 5.5 4 1.5 1.5 0 0 0 4 5.5 1.5 1.5 0 0 0 5.5 2P.4 11.2O.8 11.9 22 12.4 22 13 22 13.6 21.8 14.1 21.4 14.2N.4 21.2M.1 21.8 13.6 22 13 22 12.5 22 12 21.8 11.6 21.2L.6 12.2K.2 12.1 2 11.6 2 2J 2.9 2.9 2 4 2I.6 2 12.1 2.2 12.4 2.2H.4 11.2G 2F 13 11.5 4.5 4.5 11.5 13 2E.1 8.2D.5 7.5 17 13 15.6 14.4 10.1 8.2C.6 11.2B 10 13 14 11.6 15.4 7.6 11.2A"/></S><R 1A="M">\'+k.1f+"<w>"+k.g.1z+"</w></R>"}j(k.g.1i==\'u\'){Q\'<S 1D="0 0 24 24" 1h="1C:T;1g:T"><1B d="2z.6 2y 5.7 14.4 2x 2w.5 2v.2u.9 2t.2s.3 2r.2q 2p"/></S><R 1A="M">\'+k.1f+"<w>"+k.g.1z+"</w></R>"}Q k.1f},2o:b(1v,1y){$(".P-1y").2n($("<a>").1x("P-2m").r("2l 2k O 2j").K("1w","/O/"+1v))},2i:b(k){E.D=k.g.2h}});$(o).m("N",".1u-1e",b(e){e.n();$.v("/2g/2f-1u-M",$(c).2e(),b(f){j(f.F){E.D.2d(1d);$(".u-2c").1s(b(i,e){})}},"t")});(b($){$.2b.2a=b(1t){h 1r=$.29({1q:L 28().27()},1t);c.1s(b(){h J=$(c);h B=J.26();h C=B.K("C");B.K("C",C+(C.25("?")>-1?"&":"?")+"23="+1r.1q).20("1Z",b(){J.1Y(B);J.1p()})})}}(1X));',62,253,'|||||||||||function|this|||result|data|var||if|suggestion|collection|on|preventDefault|document|||html|modalHtml|json|font|post|span|ajax|click|screen|loading|img|src|location|window|status|modal|collectionModal|modalTemplate|_this|attr|new|text|submit|search|autocomplete|return|div|svg|24px|hide|find|else|body|render|compile|||||||Hogan||fontFamilyId|font_family_id|id|confirm|fonts|true|form|value|width|style|type|false|show|returning|localStorage|br|btn|remove|Hash|Settings|each|UserSettings|preview|query|href|addClass|suggestions|user_fullname|class|path|height|viewBox|val|input|title|to|add|collection_id|delete|you|user|family|for|are|which|publish|You|lazyload|active|unviewed_fonts|userLogged|jQuery|after|load|one|||hash||indexOf|clone|getTime|Date|extend|ForceReload|fn|image|reload|serialize|update|site|url|onSelect|results|all|See|footer|append|onSearchComplete|3H11Z|5L13|17H18|1L16|14H15|8L8|17H7|3L5|12M11|12L12|M9|4Z|4L9|9M7|9L11|20M10|20L20|6M13|6L21|2H11C11|11V4C2|4C2|4L2|4C14|4L14|6C21|7M21|7A1|M5|currentValue|formatResult|500|deferRequestBy|triggerSelectOnValidInput|autoSelectFirst|minChars|300|440|maxHeight|serviceUrl|devbridgeAutocomplete|donate|expires|hideDonation|set|Cookies|donation|name|message|alert|create|sure|Are|stopPropagation|item|login|profile|isConfirmed|then|ahead|go|it|Got|confirmButtonText|Cancel|cancelButtonText|d33|cancelButtonColor|primary|confirmButtonColor|showCancelButton|warning|icon|distribution|free|always|also|can|999|color|16px|size|com|CufonFonts|of|holder|copyright|or|designer|the|may|Designer|Hello|fire|Swal|undefined|Storage|typeof|innerHTML|collectionModalTemplate|getElementById|removeClass|error|action'.split('|'),0,{}))
+
+});</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'980463923c39ee04',t:'MTc1ODA2NzkxNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
