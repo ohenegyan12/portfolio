@@ -115,7 +115,7 @@ export default function WelcomeAlert({ isOpen, onClose, isDarkMode = false }: We
                     fontWeight: '400'
                   }}
                 >
-                  You're in. Look around to discover my work.
+                  You&apos;re in. Look around to discover my work.
                 </p>
               </div>
 

@@ -170,7 +170,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 fontFamily: 'IBM Plex Sans, sans-serif'
               }}
             >
-              What I'm bout.
+              What I&apos;m bout.
             </h1>
           </div>
 
@@ -183,7 +183,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 fontFamily: 'IBM Plex Sans, sans-serif'
               }}
             >
-              I started by sketching app ideas in the margins of my notebooks and modding any interface I could get my hands on. When I wasn't redesigning my home screen, I was on the pitch or glued to a controller—football and video games taught me timing, strategy, and how tiny decisions change outcomes.
+              I started by sketching app ideas in the margins of my notebooks and modding any interface I could get my hands on. When I wasn&apos;t redesigning my home screen, I was on the pitch or glued to a controller—football and video games taught me timing, strategy, and how tiny decisions change outcomes.
             </p>
             
             <p 
@@ -193,7 +193,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 fontFamily: 'IBM Plex Sans, sans-serif'
               }}
             >
-              I'm a UI Designer & UI Developer living where pixels meet code. I map flows with empathy, sweat the micro-interactions, and ship clean, maintainable front-end. My favorite part of the job? Watching a rough sketch evolve into something people actually enjoy using.
+              I&apos;m a UI Designer & UI Developer living where pixels meet code. I map flows with empathy, sweat the micro-interactions, and ship clean, maintainable front-end. My favorite part of the job? Watching a rough sketch evolve into something people actually enjoy using.
             </p>
             
             <p 
@@ -203,7 +203,7 @@ export default function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 fontFamily: 'IBM Plex Sans, sans-serif'
               }}
             >
-              Off the clock, you'll catch me testing new builds, learning from game UI patterns, or playing five-a-side. I'm looking to build simple, bold, human products with teams who care about craft and outcomes.
+              Off the clock, you&apos;ll catch me testing new builds, learning from game UI patterns, or playing five-a-side. I&apos;m looking to build simple, bold, human products with teams who care about craft and outcomes.
             </p>
           </div>
 

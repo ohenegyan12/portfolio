@@ -107,7 +107,7 @@ export default function Loader({ onComplete, duration = 3000 }: LoaderProps) {
         <div className={`sf-pro-font text-white text-lg md:text-xl transition-all duration-1000 ease-in-out ${
           showExitAnimation ? 'translate-x-full opacity-0' : 'translate-x-0 opacity-100'
         }`}>
-          PORTFOLIO'25
+          PORTFOLIO&apos;25
         </div>
       </div>
     </div>
