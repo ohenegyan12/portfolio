@@ -12,6 +12,13 @@ export default function AboutModal({ isOpen, onClose, isDarkMode = false }: Abou
   const [isVisible, setIsVisible] = useState(false)
   const modalRef = useRef<HTMLDivElement>(null)
 
+  const handleClose = useCallback(() => {
+    setIsVisible(false)
+    setTimeout(() => {
+      onClose()
+    }, 300)
+  }, [onClose])
+
   useEffect(() => {
     if (isOpen) {
       setIsVisible(true)
@@ -39,13 +46,6 @@ export default function AboutModal({ isOpen, onClose, isDarkMode = false }: Abou
       document.body.style.overflow = 'unset'
     }
   }, [isOpen, handleClose])
-
-  const handleClose = useCallback(() => {
-    setIsVisible(false)
-    setTimeout(() => {
-      onClose()
-    }, 300)
-  }, [onClose])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
