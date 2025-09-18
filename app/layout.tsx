@@ -5,8 +5,13 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Portfolio',
+  title: 'OGK STUDIOS',
   description: 'Personal portfolio',
+  icons: {
+    icon: '/images/fav-icon.png',
+    shortcut: '/images/fav-icon.png',
+    apple: '/images/fav-icon.png',
+  },
 }
 
 export default function RootLayout({
@@ -17,6 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/images/fav-icon.png" type="image/png" />
+        <link rel="shortcut icon" href="/images/fav-icon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/fav-icon.png" />
         <style dangerouslySetInnerHTML={{
           __html: `
             html, body { 
