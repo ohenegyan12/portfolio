@@ -7,6 +7,7 @@ import SearchBar from '../components/SearchBar'
 import Calendar from '../components/Calendar'
 import AboutModal from '../components/AboutModal'
 import WelcomeAlert from '../components/WelcomeAlert'
+import Window from '../components/Window'
 import { useTimeBasedBackground } from '../hooks/useTimeBasedBackground'
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
   const [showWelcomeAlert, setShowWelcomeAlert] = useState(false)
+  const [isWindowOpen, setIsWindowOpen] = useState(false)
   const { backgroundImage, isTransitioning } = useTimeBasedBackground()
   
   // Get background color based on time of day
@@ -68,6 +70,14 @@ export default function Home() {
 
   const handleWelcomeAlertClose = () => {
     setShowWelcomeAlert(false)
+  }
+
+  const handleWindowToggle = () => {
+    setIsWindowOpen(!isWindowOpen)
+  }
+
+  const handleWindowClose = () => {
+    setIsWindowOpen(false)
   }
 
   useEffect(() => {
@@ -178,6 +188,13 @@ export default function Home() {
       <WelcomeAlert 
         isOpen={showWelcomeAlert}
         onClose={handleWelcomeAlertClose}
+        isDarkMode={getBackgroundColor() === '#1a1a2e'}
+      />
+
+      {/* Window */}
+      <Window 
+        isOpen={isWindowOpen}
+        onClose={handleWindowClose}
         isDarkMode={getBackgroundColor() === '#1a1a2e'}
       />
 
@@ -399,6 +416,7 @@ export default function Home() {
                 src={getBackgroundColor() === '#87CEEB' ? "/images/app-icon-18.png" : "/images/app-icon-dark-18.png"} 
                 alt="App 18" 
                 className="w-12 h-12 rounded-2xl cursor-pointer"
+                onClick={handleWindowToggle}
               />
 
               {/* App Icon 19 */}
