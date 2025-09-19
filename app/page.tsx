@@ -6,11 +6,11 @@ import Loader from '../components/Loader'
 import SearchBar from '../components/SearchBar'
 import Calendar from '../components/Calendar'
 import AboutModal from '../components/AboutModal'
-import WelcomeAlert from '../components/WelcomeAlert'
 import Window from '../components/Window'
 import AppleMusicWindow from '../components/AppleMusicWindow'
 import SafariWindow from '../components/SafariWindow'
 import MailWindow from '../components/MailWindow'
+import WelcomeModal from '../components/WelcomeModal'
 import { useTimeBasedBackground } from '../hooks/useTimeBasedBackground'
 
 export default function Home() {
@@ -20,11 +20,11 @@ export default function Home() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [isCalendarOpen, setIsCalendarOpen] = useState(false)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
-  const [showWelcomeAlert, setShowWelcomeAlert] = useState(false)
   const [isWindowOpen, setIsWindowOpen] = useState(false)
   const [isAppleMusicOpen, setIsAppleMusicOpen] = useState(false)
   const [isSafariOpen, setIsSafariOpen] = useState(false)
   const [isMailOpen, setIsMailOpen] = useState(false)
+  const [showWelcomeModal, setShowWelcomeModal] = useState(false)
   const { backgroundImage, isTransitioning } = useTimeBasedBackground()
   
   // Get background color based on time of day
@@ -39,9 +39,9 @@ export default function Home() {
     // Add a small delay before showing content to ensure smooth transition
     setTimeout(() => {
       setShowContent(true)
-      // Show welcome alert after content has appeared (dock animation completes)
+      // Show welcome modal after content has appeared (dock animation completes)
       setTimeout(() => {
-        setShowWelcomeAlert(true)
+        setShowWelcomeModal(true)
       }, 1500) // Wait for dock animation to complete
     }, 200)
   }
@@ -75,9 +75,6 @@ export default function Home() {
     setIsAboutModalOpen(false)
   }
 
-  const handleWelcomeAlertClose = () => {
-    setShowWelcomeAlert(false)
-  }
 
   const handleWindowToggle = () => {
     setIsWindowOpen(!isWindowOpen)
@@ -85,6 +82,21 @@ export default function Home() {
 
   const handleWindowClose = () => {
     setIsWindowOpen(false)
+  }
+
+  const handleWelcomeModalClose = () => {
+    setShowWelcomeModal(false)
+  }
+
+  const handleExplore = () => {
+    // Navigate to projects or scroll to projects section
+    console.log('User chose to explore')
+    // You can add navigation logic here
+  }
+
+  const handleWorkWithMe = () => {
+    // Open contact form or mail window
+    setIsMailOpen(true)
   }
 
   useEffect(() => {
@@ -192,12 +204,6 @@ export default function Home() {
         isDarkMode={getBackgroundColor() === '#1a1a2e'}
       />
 
-      {/* Welcome Alert */}
-      <WelcomeAlert 
-        isOpen={showWelcomeAlert}
-        onClose={handleWelcomeAlertClose}
-        isDarkMode={getBackgroundColor() === '#1a1a2e'}
-      />
 
       {/* Window */}
       <Window 
@@ -225,6 +231,15 @@ export default function Home() {
         isOpen={isMailOpen}
         onClose={() => setIsMailOpen(false)}
         isDarkMode={getBackgroundColor() === '#1a1a2e'}
+      />
+
+      {/* Welcome Modal */}
+      <WelcomeModal 
+        isOpen={showWelcomeModal}
+        onClose={handleWelcomeModalClose}
+        isDarkMode={getBackgroundColor() === '#1a1a2e'}
+        onExplore={handleExplore}
+        onWorkWithMe={handleWorkWithMe}
       />
 
       {/* Apple Style Dock */}
