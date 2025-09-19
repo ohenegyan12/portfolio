@@ -25,6 +25,13 @@ export default function MailWindow({ isOpen, onClose, isDarkMode = false }: Mail
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null)
   const [currentView, setCurrentView] = useState<'inbox' | 'sent' | 'drafts' | 'vips' | 'flagged' | 'remind' | 'sendLater' | 'icloudInbox' | 'icloudDrafts' | 'icloudSent' | 'car' | 'pets' | 'vacation' | 'shopping' | 'junk' | 'trash'>('inbox')
+  const [isComposing, setIsComposing] = useState(false)
+  const [composeData, setComposeData] = useState({
+    to: '',
+    from: '',
+    subject: '',
+    body: ''
+  })
 
   const emails: Email[] = [
     {
@@ -1679,7 +1686,225 @@ export default function MailWindow({ isOpen, onClose, isDarkMode = false }: Mail
                       background: 'transparent'
                     }}
                   >
-                    {selectedEmail ? (
+                    {isComposing ? (
+                      /* Compose Email Interface */
+                      <div className="flex flex-col h-full">
+                        {/* Compose Header */}
+                        <div 
+                          style={{
+                            borderBottom: `1px solid ${isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+                            paddingBottom: '16px',
+                            marginBottom: '24px'
+                          }}
+                        >
+                          <h1 
+                            style={{
+                              fontSize: '24px',
+                              fontWeight: '600',
+                              color: isDarkMode ? 'white' : 'black',
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              margin: '0 0 16px 0',
+                              lineHeight: '1.2'
+                            }}
+                          >
+                            New Message
+                          </h1>
+                        </div>
+
+                        {/* Email Fields */}
+                        <div className="flex flex-col" style={{ marginBottom: '24px' }}>
+                          {/* To Field */}
+                          <div 
+                            className="flex items-center"
+                            style={{
+                              borderBottom: `1px solid ${isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+                              paddingBottom: '8px',
+                              marginBottom: '8px'
+                            }}
+                          >
+                            <label 
+                              style={{
+                                width: '60px',
+                                fontSize: '14px',
+                                color: isDarkMode ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 0, 0, 0.7)',
+                                fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                marginRight: '12px'
+                              }}
+                            >
+                              To:
+                            </label>
+                            <input
+                              type="email"
+                              value={composeData.to}
+                              onChange={(e) => setComposeData({...composeData, to: e.target.value})}
+                              style={{
+                                flex: 1,
+                                padding: '8px 0',
+                                border: 'none',
+                                backgroundColor: 'transparent',
+                                color: isDarkMode ? 'white' : 'black',
+                                fontSize: '14px',
+                                fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                outline: 'none'
+                              }}
+                            />
+                          </div>
+
+
+                          {/* Subject Field */}
+                          <div 
+                            className="flex items-center"
+                            style={{
+                              borderBottom: `1px solid ${isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+                              paddingBottom: '8px',
+                              marginBottom: '8px'
+                            }}
+                          >
+                            <label 
+                              style={{
+                                width: '60px',
+                                fontSize: '14px',
+                                color: isDarkMode ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 0, 0, 0.7)',
+                                fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                marginRight: '12px'
+                              }}
+                            >
+                              Subject:
+                            </label>
+                            <input
+                              type="text"
+                              value={composeData.subject}
+                              onChange={(e) => setComposeData({...composeData, subject: e.target.value})}
+                              style={{
+                                flex: 1,
+                                padding: '8px 0',
+                                border: 'none',
+                                backgroundColor: 'transparent',
+                                color: isDarkMode ? 'white' : 'black',
+                                fontSize: '14px',
+                                fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                outline: 'none'
+                              }}
+                            />
+                          </div>
+
+                          {/* From Field */}
+                          <div 
+                            className="flex items-center"
+                            style={{
+                              borderBottom: `1px solid ${isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+                              paddingBottom: '8px',
+                              marginBottom: '8px'
+                            }}
+                          >
+                            <label 
+                              style={{
+                                width: '60px',
+                                fontSize: '14px',
+                                color: isDarkMode ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 0, 0, 0.7)',
+                                fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                marginRight: '12px'
+                              }}
+                            >
+                              From:
+                            </label>
+                            <input
+                              type="email"
+                              value={composeData.from}
+                              onChange={(e) => setComposeData({...composeData, from: e.target.value})}
+                              placeholder="Enter your email address"
+                              style={{
+                                flex: 1,
+                                padding: '8px 0',
+                                border: 'none',
+                                backgroundColor: 'transparent',
+                                color: isDarkMode ? 'white' : 'black',
+                                fontSize: '14px',
+                                fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                outline: 'none'
+                              }}
+                            />
+                          </div>
+                        </div>
+
+                        {/* Message Body */}
+                        <div className="flex-1" style={{ marginBottom: '16px' }}>
+                            <textarea
+                              value={composeData.body}
+                              onChange={(e) => setComposeData({...composeData, body: e.target.value})}
+                              placeholder="Enter message"
+                              autoFocus
+                              style={{
+                                width: '100%',
+                                height: '100%',
+                                padding: '8px 0',
+                                border: 'none',
+                                backgroundColor: 'transparent',
+                                color: isDarkMode ? 'white' : 'black',
+                                fontSize: '14px',
+                                fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                outline: 'none',
+                                resize: 'none',
+                                caretColor: '#0088FF'
+                              }}
+                            />
+                        </div>
+
+                        {/* Action Buttons */}
+                        <div className="flex items-center" style={{ gap: '12px' }}>
+                          <button
+                            onClick={() => {
+                              // Send email functionality
+                              console.log('Sending email:', composeData)
+                              setIsComposing(false)
+                            }}
+                            style={{
+                              backgroundColor: '#0088FF',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '20px',
+                              padding: '8px 16px',
+                              fontSize: '14px',
+                              fontWeight: '500',
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              cursor: 'pointer',
+                              transition: 'all 0.2s ease'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.backgroundColor = '#0056CC'
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.backgroundColor = '#0088FF'
+                            }}
+                          >
+                            Send
+                          </button>
+                          <button
+                            onClick={() => setIsComposing(false)}
+                            style={{
+                              backgroundColor: 'transparent',
+                              color: isDarkMode ? 'rgba(255, 255, 255, 0.7)' : 'rgba(0, 0, 0, 0.7)',
+                              border: `1px solid ${isDarkMode ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.2)'}`,
+                              borderRadius: '20px',
+                              padding: '8px 16px',
+                              fontSize: '14px',
+                              fontWeight: '500',
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              cursor: 'pointer',
+                              transition: 'all 0.2s ease'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.backgroundColor = 'transparent'
+                            }}
+                          >
+                            Cancel
+                          </button>
+                        </div>
+                      </div>
+                    ) : selectedEmail ? (
                       <>
                         {/* Email Header */}
                         <div 
@@ -1751,13 +1976,56 @@ export default function MailWindow({ isOpen, onClose, isDarkMode = false }: Mail
                             fontSize: '16px',
                             lineHeight: '1.6',
                             color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
-                            fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif'
+                            fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                            marginBottom: '24px'
                           }}
                         >
                           <p>Hi there,</p>
                           <p>Welcome to my portfolio! If you haven&apos;t explored the experience yet, take some time to click around and see the projects, designs, and experiments I&apos;ve put together.</p>
                           <p>Already explored? If you&apos;d like to collaborate or work with me, just hit reply or send me a mail, I&apos;d love to hear from you.</p>
                           <p>Best,<br />Ohene</p>
+                        </div>
+
+                        {/* Let's Talk Button */}
+                        <div style={{ marginTop: '80px' }}>
+                          <button
+                            onClick={() => {
+                              setIsComposing(true)
+                              setComposeData({
+                                to: 'ohenegyan159@gmail.com',
+                                from: '',
+                                subject: '',
+                                body: ''
+                              })
+                            }}
+                            style={{
+                              backgroundColor: '#0088FF',
+                              color: 'white',
+                              border: 'none',
+                              borderRadius: '100px',
+                              width: '110px',
+                              height: '32px',
+                              fontSize: '13px',
+                              fontWeight: '500',
+                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                              lineHeight: '16px',
+                              cursor: 'pointer',
+                              transition: 'all 0.2s ease',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.backgroundColor = '#0056CC'
+                              e.currentTarget.style.transform = 'translateY(-1px)'
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.backgroundColor = '#0088FF'
+                              e.currentTarget.style.transform = 'translateY(0)'
+                            }}
+                          >
+                            Let&apos;s Talk
+                          </button>
                         </div>
                       </>
                     ) : (
