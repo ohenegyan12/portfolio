@@ -76,7 +76,9 @@ export default function SafariWindow({ isOpen, onClose, isDarkMode = false }: Sa
                  display: 'flex',
                  alignItems: 'center',
                  paddingLeft: '12px',
-                 gap: '8px'
+                 gap: '8px',
+                 borderTopLeftRadius: '3.34px',
+                 borderTopRightRadius: '3.34px'
                }}
              >
                {/* Red Close Button */}

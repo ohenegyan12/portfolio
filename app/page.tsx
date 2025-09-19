@@ -196,6 +196,7 @@ export default function Home() {
         currentDate={currentDate}
         onDateSelect={handleDateSelect}
       />
+
       
       {/* About Modal */}
       <AboutModal 
@@ -203,7 +204,6 @@ export default function Home() {
         onClose={handleAboutModalClose}
         isDarkMode={getBackgroundColor() === '#1a1a2e'}
       />
-
 
       {/* Window */}
       <Window 
