@@ -218,7 +218,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             height="16" 
                             style={{ 
                               marginRight: '4px',
-                              filter: 'brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(1456%) hue-rotate(204deg) brightness(101%) contrast(101%)'
+                              filter: isDarkMode ? 'brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(1456%) hue-rotate(204deg) brightness(101%) contrast(101%)' : 'brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(1456%) hue-rotate(204deg) brightness(101%) contrast(101%)'
                             }}
                           />
                           <span 
@@ -247,18 +247,18 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                         onMouseEnter={(e) => {
                           const img = e.currentTarget.querySelector('img')
                           const span = e.currentTarget.querySelector('span')
-                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
-                          if (span) span.style.color = 'black'
+                          if (img) img.style.filter = isDarkMode ? 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)' : 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = isDarkMode ? 'black' : '#000000'
                         }}
                         onMouseLeave={(e) => {
                           const img = e.currentTarget.querySelector('img')
                           const span = e.currentTarget.querySelector('span')
-                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
-                          if (span) span.style.color = 'white'
+                          if (img) img.style.filter = isDarkMode ? 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)' : 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = isDarkMode ? 'white' : '#000000'
                         }}
                       >
                         <div 
-                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          className="flex items-center transition-colors duration-150"
                           style={{
                             width: '204px',
                             height: '24px',
@@ -269,6 +269,12 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             borderBottomRightRadius: '8px',
                             paddingLeft: '8px'
                           }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = isDarkMode ? '#374151' : 'rgba(0, 0, 0, 0.03)'
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent'
+                          }}
                         >
                           <img 
                             src="/images/desktop-icon.svg" 
@@ -278,7 +284,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             className="transition-all duration-150"
                             style={{ 
                               marginRight: '4px',
-                              filter: 'brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(1456%) hue-rotate(204deg) brightness(101%) contrast(101%)'
+                              filter: isDarkMode ? 'brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(1456%) hue-rotate(204deg) brightness(101%) contrast(101%)' : 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
                             }}
                           />
                           <span 
@@ -287,7 +293,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'white',
+                              color: isDarkMode ? 'white' : '#000000',
                               marginRight: '10px'
                             }}
                           >
@@ -308,18 +314,18 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                         onMouseEnter={(e) => {
                           const img = e.currentTarget.querySelector('img')
                           const span = e.currentTarget.querySelector('span')
-                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
-                          if (span) span.style.color = 'black'
+                          if (img) img.style.filter = isDarkMode ? 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)' : 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = isDarkMode ? 'black' : '#000000'
                         }}
                         onMouseLeave={(e) => {
                           const img = e.currentTarget.querySelector('img')
                           const span = e.currentTarget.querySelector('span')
-                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
-                          if (span) span.style.color = 'white'
+                          if (img) img.style.filter = isDarkMode ? 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)' : 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = isDarkMode ? 'white' : '#000000'
                         }}
                       >
                         <div 
-                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          className="flex items-center transition-colors duration-150"
                           style={{
                             width: '204px',
                             height: '24px',
@@ -330,6 +336,12 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             borderBottomRightRadius: '8px',
                             paddingLeft: '8px'
                           }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = isDarkMode ? '#374151' : 'rgba(0, 0, 0, 0.03)'
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent'
+                          }}
                         >
                           <img 
                             src="/images/document-icon.svg" 
@@ -339,7 +351,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             className="transition-all duration-150"
                             style={{ 
                               marginRight: '4px',
-                              filter: 'brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(1456%) hue-rotate(204deg) brightness(101%) contrast(101%)'
+                              filter: isDarkMode ? 'brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(1456%) hue-rotate(204deg) brightness(101%) contrast(101%)' : 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
                             }}
                           />
                           <span 
@@ -348,7 +360,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'white',
+                              color: isDarkMode ? 'white' : '#000000',
                               marginRight: '10px'
                             }}
                           >
@@ -368,18 +380,18 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                         onMouseEnter={(e) => {
                           const img = e.currentTarget.querySelector('img')
                           const span = e.currentTarget.querySelector('span')
-                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
-                          if (span) span.style.color = 'black'
+                          if (img) img.style.filter = isDarkMode ? 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)' : 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = isDarkMode ? 'black' : '#000000'
                         }}
                         onMouseLeave={(e) => {
                           const img = e.currentTarget.querySelector('img')
                           const span = e.currentTarget.querySelector('span')
-                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
-                          if (span) span.style.color = 'white'
+                          if (img) img.style.filter = isDarkMode ? 'brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)' : 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = isDarkMode ? 'white' : '#000000'
                         }}
                       >
                         <div 
-                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          className="flex items-center transition-colors duration-150"
                           style={{
                             width: '204px',
                             height: '24px',
@@ -390,6 +402,12 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             borderBottomRightRadius: '8px',
                             paddingLeft: '8px'
                           }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = isDarkMode ? '#374151' : 'rgba(0, 0, 0, 0.03)'
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent'
+                          }}
                         >
                           <img 
                             src="/images/download-icon.svg" 
@@ -399,7 +417,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             className="transition-all duration-150"
                             style={{ 
                               marginRight: '4px',
-                              filter: 'brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(1456%) hue-rotate(204deg) brightness(101%) contrast(101%)'
+                              filter: isDarkMode ? 'brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(1456%) hue-rotate(204deg) brightness(101%) contrast(101%)' : 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
                             }}
                           />
                           <span 
@@ -408,7 +426,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'white',
+                              color: isDarkMode ? 'white' : '#000000',
                               marginRight: '10px'
                             }}
                           >
@@ -459,22 +477,32 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                           const img = e.currentTarget.querySelector('img')
                           const span = e.currentTarget.querySelector('span')
                           if (img) img.style.filter = 'brightness(0) saturate(100%) invert(67%) sepia(100%) saturate(1000%) hue-rotate(180deg) brightness(100%) contrast(100%)'
-                          if (span) span.style.color = 'black'
+                          if (span) span.style.color = isDarkMode ? 'black' : '#000000'
                         }}
                         onMouseLeave={(e) => {
                           const img = e.currentTarget.querySelector('img')
                           const span = e.currentTarget.querySelector('span')
                           if (img) img.style.filter = 'brightness(0) saturate(100%) invert(67%) sepia(100%) saturate(1000%) hue-rotate(180deg) brightness(100%) contrast(100%)'
-                          if (span) span.style.color = 'white'
+                          if (span) span.style.color = isDarkMode ? 'white' : '#000000'
                         }}
                       >
                         <div 
-                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          className="flex items-center transition-colors duration-150"
                           style={{
                             width: '204px',
                             height: '24px',
                             borderRadius: '8px',
+                            borderTopLeftRadius: '8px',
+                            borderTopRightRadius: '8px',
+                            borderBottomLeftRadius: '8px',
+                            borderBottomRightRadius: '8px',
                             paddingLeft: '8px'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = isDarkMode ? '#374151' : 'rgba(0, 0, 0, 0.03)'
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent'
                           }}
                         >
                           <img 
@@ -494,7 +522,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'white',
+                              color: isDarkMode ? 'white' : '#000000',
                               marginRight: '10px'
                             }}
                           >
@@ -504,9 +532,9 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
               </div>
 
                       {/* Shared */}
-              <div 
+                      <div 
                         className="flex items-center cursor-pointer transition-colors duration-150 group"
-                style={{
+                        style={{
                           width: '224px',
                           height: '24px',
                           paddingLeft: '6px',
@@ -516,22 +544,32 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                           const img = e.currentTarget.querySelector('img')
                           const span = e.currentTarget.querySelector('span')
                           if (img) img.style.filter = 'brightness(0) saturate(100%) invert(67%) sepia(100%) saturate(1000%) hue-rotate(180deg) brightness(100%) contrast(100%)'
-                          if (span) span.style.color = 'black'
+                          if (span) span.style.color = isDarkMode ? 'black' : '#000000'
                         }}
                         onMouseLeave={(e) => {
                           const img = e.currentTarget.querySelector('img')
                           const span = e.currentTarget.querySelector('span')
                           if (img) img.style.filter = 'brightness(0) saturate(100%) invert(67%) sepia(100%) saturate(1000%) hue-rotate(180deg) brightness(100%) contrast(100%)'
-                          if (span) span.style.color = 'white'
+                          if (span) span.style.color = isDarkMode ? 'white' : '#000000'
                         }}
                       >
                         <div 
-                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
-                  style={{
+                          className="flex items-center transition-colors duration-150"
+                          style={{
                             width: '204px',
                             height: '24px',
                             borderRadius: '8px',
+                            borderTopLeftRadius: '8px',
+                            borderTopRightRadius: '8px',
+                            borderBottomLeftRadius: '8px',
+                            borderBottomRightRadius: '8px',
                             paddingLeft: '8px'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = isDarkMode ? '#374151' : 'rgba(0, 0, 0, 0.03)'
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent'
                           }}
                         >
                           <img 
@@ -551,7 +589,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'white',
+                              color: isDarkMode ? 'white' : '#000000',
                               marginRight: '10px'
                             }}
                           >
@@ -600,20 +638,30 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                         }}
                         onMouseEnter={(e) => {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = 'black'
+                          if (span) span.style.color = isDarkMode ? 'black' : '#000000'
                         }}
                         onMouseLeave={(e) => {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = 'white'
+                          if (span) span.style.color = isDarkMode ? 'white' : '#000000'
                         }}
                       >
                         <div 
-                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          className="flex items-center transition-colors duration-150"
                           style={{
                             width: '204px',
                             height: '24px',
                             borderRadius: '8px',
+                            borderTopLeftRadius: '8px',
+                            borderTopRightRadius: '8px',
+                            borderBottomLeftRadius: '8px',
+                            borderBottomRightRadius: '8px',
                             paddingLeft: '8px'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = isDarkMode ? '#374151' : 'rgba(0, 0, 0, 0.03)'
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent'
                           }}
                         >
                           <div 
@@ -631,7 +679,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'white',
+                              color: isDarkMode ? 'white' : '#000000',
                               marginRight: '10px'
                             }}
                           >
@@ -651,20 +699,30 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                         }}
                         onMouseEnter={(e) => {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = 'black'
+                          if (span) span.style.color = isDarkMode ? 'black' : '#000000'
                         }}
                         onMouseLeave={(e) => {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = 'white'
+                          if (span) span.style.color = isDarkMode ? 'white' : '#000000'
                         }}
                       >
                         <div 
-                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          className="flex items-center transition-colors duration-150"
                           style={{
                             width: '204px',
                             height: '24px',
                             borderRadius: '8px',
+                            borderTopLeftRadius: '8px',
+                            borderTopRightRadius: '8px',
+                            borderBottomLeftRadius: '8px',
+                            borderBottomRightRadius: '8px',
                             paddingLeft: '8px'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = isDarkMode ? '#374151' : 'rgba(0, 0, 0, 0.03)'
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent'
                           }}
                         >
                           <div 
@@ -682,7 +740,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'white',
+                              color: isDarkMode ? 'white' : '#000000',
                               marginRight: '10px'
                             }}
                           >
@@ -702,20 +760,30 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                         }}
                         onMouseEnter={(e) => {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = 'black'
+                          if (span) span.style.color = isDarkMode ? 'black' : '#000000'
                         }}
                         onMouseLeave={(e) => {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = 'white'
+                          if (span) span.style.color = isDarkMode ? 'white' : '#000000'
                         }}
                       >
                         <div 
-                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          className="flex items-center transition-colors duration-150"
                           style={{
                             width: '204px',
                             height: '24px',
                             borderRadius: '8px',
+                            borderTopLeftRadius: '8px',
+                            borderTopRightRadius: '8px',
+                            borderBottomLeftRadius: '8px',
+                            borderBottomRightRadius: '8px',
                             paddingLeft: '8px'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = isDarkMode ? '#374151' : 'rgba(0, 0, 0, 0.03)'
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent'
                           }}
                         >
                           <div 
@@ -733,7 +801,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'white',
+                              color: isDarkMode ? 'white' : '#000000',
                               marginRight: '10px'
                             }}
                           >
@@ -753,20 +821,30 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                         }}
                         onMouseEnter={(e) => {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = 'black'
+                          if (span) span.style.color = isDarkMode ? 'black' : '#000000'
                         }}
                         onMouseLeave={(e) => {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = 'white'
+                          if (span) span.style.color = isDarkMode ? 'white' : '#000000'
                         }}
                       >
                         <div 
-                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          className="flex items-center transition-colors duration-150"
                           style={{
                             width: '204px',
                             height: '24px',
                             borderRadius: '8px',
+                            borderTopLeftRadius: '8px',
+                            borderTopRightRadius: '8px',
+                            borderBottomLeftRadius: '8px',
+                            borderBottomRightRadius: '8px',
                             paddingLeft: '8px'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = isDarkMode ? '#374151' : 'rgba(0, 0, 0, 0.03)'
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent'
                           }}
                         >
                           <div 
@@ -784,7 +862,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'white',
+                              color: isDarkMode ? 'white' : '#000000',
                               marginRight: '10px'
                             }}
                           >
@@ -804,20 +882,30 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                         }}
                         onMouseEnter={(e) => {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = 'black'
+                          if (span) span.style.color = isDarkMode ? 'black' : '#000000'
                         }}
                         onMouseLeave={(e) => {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = 'white'
+                          if (span) span.style.color = isDarkMode ? 'white' : '#000000'
                         }}
                       >
                         <div 
-                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          className="flex items-center transition-colors duration-150"
                           style={{
                             width: '204px',
                             height: '24px',
                             borderRadius: '8px',
+                            borderTopLeftRadius: '8px',
+                            borderTopRightRadius: '8px',
+                            borderBottomLeftRadius: '8px',
+                            borderBottomRightRadius: '8px',
                             paddingLeft: '8px'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = isDarkMode ? '#374151' : 'rgba(0, 0, 0, 0.03)'
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent'
                           }}
                         >
                           <div 
@@ -835,7 +923,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'white',
+                              color: isDarkMode ? 'white' : '#000000',
                               marginRight: '10px'
                             }}
                           >
@@ -855,20 +943,30 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                         }}
                         onMouseEnter={(e) => {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = 'black'
+                          if (span) span.style.color = isDarkMode ? 'black' : '#000000'
                         }}
                         onMouseLeave={(e) => {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = 'white'
+                          if (span) span.style.color = isDarkMode ? 'white' : '#000000'
                         }}
                       >
                         <div 
-                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          className="flex items-center transition-colors duration-150"
                           style={{
                             width: '204px',
                             height: '24px',
                             borderRadius: '8px',
+                            borderTopLeftRadius: '8px',
+                            borderTopRightRadius: '8px',
+                            borderBottomLeftRadius: '8px',
+                            borderBottomRightRadius: '8px',
                             paddingLeft: '8px'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = isDarkMode ? '#374151' : 'rgba(0, 0, 0, 0.03)'
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent'
                           }}
                         >
                           <div 
@@ -886,7 +984,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'white',
+                              color: isDarkMode ? 'white' : '#000000',
                               marginRight: '10px'
                             }}
                           >
@@ -906,20 +1004,30 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                         }}
                         onMouseEnter={(e) => {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = 'black'
+                          if (span) span.style.color = isDarkMode ? 'black' : '#000000'
                         }}
                         onMouseLeave={(e) => {
                           const span = e.currentTarget.querySelector('span')
-                          if (span) span.style.color = 'white'
+                          if (span) span.style.color = isDarkMode ? 'white' : '#000000'
                         }}
                       >
                         <div 
-                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          className="flex items-center transition-colors duration-150"
                           style={{
                             width: '204px',
                             height: '24px',
                             borderRadius: '8px',
+                            borderTopLeftRadius: '8px',
+                            borderTopRightRadius: '8px',
+                            borderBottomLeftRadius: '8px',
+                            borderBottomRightRadius: '8px',
                             paddingLeft: '8px'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = isDarkMode ? '#374151' : 'rgba(0, 0, 0, 0.03)'
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent'
                           }}
                         >
                           <div 
@@ -937,7 +1045,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'white',
+                              color: isDarkMode ? 'white' : '#000000',
                               marginRight: '10px'
                             }}
                           >
@@ -958,25 +1066,35 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                         onMouseEnter={(e) => {
                           const img = e.currentTarget.querySelector('img')
                           const span = e.currentTarget.querySelector('span')
-                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
-                          if (span) span.style.color = 'black'
+                          if (img) img.style.filter = isDarkMode ? 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)' : 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = isDarkMode ? 'black' : '#000000'
                         }}
                         onMouseLeave={(e) => {
                           const img = e.currentTarget.querySelector('img')
                           const span = e.currentTarget.querySelector('span')
-                          if (img) img.style.filter = 'brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
-                          if (span) span.style.color = 'white'
+                          if (img) img.style.filter = isDarkMode ? 'brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)' : 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                          if (span) span.style.color = isDarkMode ? 'white' : '#000000'
                         }}
                       >
                         <div 
-                          className="flex items-center hover:bg-gray-100 transition-colors duration-150"
+                          className="flex items-center transition-colors duration-150"
                           style={{
                             width: '204px',
                             height: '24px',
                             borderRadius: '8px',
+                            borderTopLeftRadius: '8px',
+                            borderTopRightRadius: '8px',
+                            borderBottomLeftRadius: '8px',
+                            borderBottomRightRadius: '8px',
                             paddingLeft: '8px'
-                        }}
-                      >
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = isDarkMode ? '#374151' : 'rgba(0, 0, 0, 0.03)'
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = 'transparent'
+                          }}
+                        >
                         <img 
                             src="/images/all-tags.svg" 
                             alt="All Tags" 
@@ -985,7 +1103,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                             className="transition-all duration-150"
                           style={{
                               marginRight: '4px',
-                              filter: 'brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
+                              filter: isDarkMode ? 'brightness(0) saturate(100%) invert(30%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)' : 'brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%)'
                             }}
                           />
                           <span 
@@ -994,7 +1112,7 @@ export default function Window({ isOpen, onClose, isDarkMode = false }: WindowPr
                               fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                               fontSize: '11px',
                               fontWeight: '500',
-                              color: 'white',
+                              color: isDarkMode ? 'white' : '#000000',
                               marginRight: '10px'
                             }}
                           >

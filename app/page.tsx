@@ -10,6 +10,7 @@ import WelcomeAlert from '../components/WelcomeAlert'
 import Window from '../components/Window'
 import AppleMusicWindow from '../components/AppleMusicWindow'
 import SafariWindow from '../components/SafariWindow'
+import MailWindow from '../components/MailWindow'
 import { useTimeBasedBackground } from '../hooks/useTimeBasedBackground'
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
   const [isWindowOpen, setIsWindowOpen] = useState(false)
   const [isAppleMusicOpen, setIsAppleMusicOpen] = useState(false)
   const [isSafariOpen, setIsSafariOpen] = useState(false)
+  const [isMailOpen, setIsMailOpen] = useState(false)
   const { backgroundImage, isTransitioning } = useTimeBasedBackground()
   
   // Get background color based on time of day
@@ -187,6 +189,7 @@ export default function Home() {
       <AboutModal 
         isOpen={isAboutModalOpen}
         onClose={handleAboutModalClose}
+        isDarkMode={getBackgroundColor() === '#1a1a2e'}
       />
 
       {/* Welcome Alert */}
@@ -214,6 +217,13 @@ export default function Home() {
       <SafariWindow 
         isOpen={isSafariOpen}
         onClose={() => setIsSafariOpen(false)}
+        isDarkMode={getBackgroundColor() === '#1a1a2e'}
+      />
+
+      {/* Mail Window */}
+      <MailWindow 
+        isOpen={isMailOpen}
+        onClose={() => setIsMailOpen(false)}
         isDarkMode={getBackgroundColor() === '#1a1a2e'}
       />
 
@@ -291,14 +301,15 @@ export default function Home() {
                 className="w-12 h-12 rounded-2xl cursor-pointer"
               />
 
-              {/* App Icon 5 */}
+              {/* App Icon 5 - Mail */}
               <motion.img
                 whileHover={{ scale: 1.2, y: -8 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 src={getBackgroundColor() === '#87CEEB' ? "/images/app-icon-5.png" : "/images/app-icon-dark-5.png"} 
-                alt="App 5" 
+                alt="Mail" 
                 className="w-12 h-12 rounded-2xl cursor-pointer"
+                onClick={() => setIsMailOpen(true)}
               />
 
               {/* App Icon 6 */}

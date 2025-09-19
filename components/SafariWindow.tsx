@@ -291,7 +291,7 @@ export default function SafariWindow({ isOpen, onClose, isDarkMode = false }: Sa
                {/* Web Projects Title */}
                <h2
                  style={{
-                   color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)',
+                   color: 'rgba(255, 255, 255, 0.9)',
                    fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                    fontSize: '24px',
                    fontWeight: '600',
@@ -351,7 +351,7 @@ export default function SafariWindow({ isOpen, onClose, isDarkMode = false }: Sa
                    {/* App Name */}
                    <span
                      style={{
-                       color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)',
+                       color: 'rgba(255, 255, 255, 0.9)',
                        fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                        fontSize: '14px',
                        fontWeight: '500',
@@ -410,7 +410,7 @@ export default function SafariWindow({ isOpen, onClose, isDarkMode = false }: Sa
                    {/* App Name */}
                    <span
                      style={{
-                       color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)',
+                       color: 'rgba(255, 255, 255, 0.9)',
                        fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                        fontSize: '14px',
                        fontWeight: '500',
@@ -469,7 +469,7 @@ export default function SafariWindow({ isOpen, onClose, isDarkMode = false }: Sa
                    {/* App Name */}
                    <span
                      style={{
-                       color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)',
+                       color: 'rgba(255, 255, 255, 0.9)',
                        fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                        fontSize: '14px',
                        fontWeight: '500',
@@ -528,7 +528,7 @@ export default function SafariWindow({ isOpen, onClose, isDarkMode = false }: Sa
                    {/* App Name */}
                    <span
                      style={{
-                       color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)',
+                       color: 'rgba(255, 255, 255, 0.9)',
                        fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                        fontSize: '14px',
                        fontWeight: '500',
@@ -587,7 +587,7 @@ export default function SafariWindow({ isOpen, onClose, isDarkMode = false }: Sa
                    {/* App Name */}
                    <span
                      style={{
-                       color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)',
+                       color: 'rgba(255, 255, 255, 0.9)',
                        fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                        fontSize: '14px',
                        fontWeight: '500',
@@ -646,7 +646,7 @@ export default function SafariWindow({ isOpen, onClose, isDarkMode = false }: Sa
                    {/* App Name */}
                    <span
                      style={{
-                       color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)',
+                       color: 'rgba(255, 255, 255, 0.9)',
                        fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                        fontSize: '14px',
                        fontWeight: '500',
@@ -705,7 +705,7 @@ export default function SafariWindow({ isOpen, onClose, isDarkMode = false }: Sa
                    {/* App Name */}
                    <span
                      style={{
-                       color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)',
+                       color: 'rgba(255, 255, 255, 0.9)',
                        fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                        fontSize: '14px',
                        fontWeight: '500',
@@ -764,7 +764,7 @@ export default function SafariWindow({ isOpen, onClose, isDarkMode = false }: Sa
                    {/* App Name */}
                    <span
                      style={{
-                       color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)',
+                       color: 'rgba(255, 255, 255, 0.9)',
                        fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                        fontSize: '14px',
                        fontWeight: '500',
@@ -785,7 +785,7 @@ export default function SafariWindow({ isOpen, onClose, isDarkMode = false }: Sa
                >
                  <h2
                    style={{
-                     color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)',
+                     color: 'rgba(255, 255, 255, 0.9)',
                      fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                      fontSize: '24px',
                      fontWeight: '600',

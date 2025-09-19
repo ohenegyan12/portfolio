@@ -115,7 +115,7 @@ export default function AboutModal({ isOpen, onClose, isDarkMode = false }: Abou
                 src="/images/minimize.svg" 
                 alt="Minimize" 
                 className="w-6 h-6"
-                style={{ filter: 'brightness(0)' }}
+                style={{ filter: isDarkMode ? 'brightness(0) invert(1)' : 'brightness(0)' }}
               />
             </button>
             
@@ -127,7 +127,7 @@ export default function AboutModal({ isOpen, onClose, isDarkMode = false }: Abou
                 src="/images/maximize.svg" 
                 alt="Maximize" 
                 className="w-6 h-6"
-                style={{ filter: 'brightness(0)' }}
+                style={{ filter: isDarkMode ? 'brightness(0) invert(1)' : 'brightness(0)' }}
               />
             </button>
             
@@ -140,7 +140,7 @@ export default function AboutModal({ isOpen, onClose, isDarkMode = false }: Abou
                 src="/images/close-button.svg" 
                 alt="Close" 
                 className="w-6 h-6"
-                style={{ filter: 'brightness(0)' }}
+                style={{ filter: isDarkMode ? 'brightness(0) invert(1)' : 'brightness(0)' }}
               />
             </button>
           </div>
@@ -301,7 +301,7 @@ export default function AboutModal({ isOpen, onClose, isDarkMode = false }: Abou
                   fontFamily: 'IBM Plex Sans, sans-serif'
                 }}
               >
-                building ui • <span className="transition-colors duration-300 group-hover:text-white" style={{ color: '#1DA1F2' }}>@figma</span> <span className="transition-colors duration-300 group-hover:text-white" style={{ color: '#1DA1F2' }}>@framer</span> <span className="transition-colors duration-300 group-hover:text-white" style={{ color: '#1DA1F2' }}>@react</span> <span className="transition-colors duration-300 group-hover:text-white" style={{ color: '#1DA1F2' }}>@tailwind</span>
+                building ui • <span className="transition-colors duration-300 group-hover:text-white" style={{ color: isDarkMode ? '#1DA1F2' : '#0066CC' }}>@figma</span> <span className="transition-colors duration-300 group-hover:text-white" style={{ color: isDarkMode ? '#1DA1F2' : '#0066CC' }}>@framer</span> <span className="transition-colors duration-300 group-hover:text-white" style={{ color: isDarkMode ? '#1DA1F2' : '#0066CC' }}>@react</span> <span className="transition-colors duration-300 group-hover:text-white" style={{ color: isDarkMode ? '#1DA1F2' : '#0066CC' }}>@tailwind</span>
               </p>
               
               {/* Button */}
