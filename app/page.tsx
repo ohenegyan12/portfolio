@@ -9,6 +9,7 @@ import AboutModal from '../components/AboutModal'
 import WelcomeAlert from '../components/WelcomeAlert'
 import Window from '../components/Window'
 import AppleMusicWindow from '../components/AppleMusicWindow'
+import SafariWindow from '../components/SafariWindow'
 import { useTimeBasedBackground } from '../hooks/useTimeBasedBackground'
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
   const [showWelcomeAlert, setShowWelcomeAlert] = useState(false)
   const [isWindowOpen, setIsWindowOpen] = useState(false)
   const [isAppleMusicOpen, setIsAppleMusicOpen] = useState(false)
+  const [isSafariOpen, setIsSafariOpen] = useState(false)
   const { backgroundImage, isTransitioning } = useTimeBasedBackground()
   
   // Get background color based on time of day
@@ -208,6 +210,13 @@ export default function Home() {
         isDarkMode={getBackgroundColor() === '#1a1a2e'}
       />
 
+      {/* Safari Window */}
+      <SafariWindow 
+        isOpen={isSafariOpen}
+        onClose={() => setIsSafariOpen(false)}
+        isDarkMode={getBackgroundColor() === '#1a1a2e'}
+      />
+
       {/* Apple Style Dock */}
       <AnimatePresence>
         {showContent && (
@@ -261,14 +270,15 @@ export default function Home() {
                 className="w-12 h-12 rounded-2xl cursor-pointer"
               />
 
-              {/* App Icon 3 */}
+              {/* App Icon 3 - Safari */}
               <motion.img
                 whileHover={{ scale: 1.2, y: -8 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 src={getBackgroundColor() === '#87CEEB' ? "/images/app-icon-3.png" : "/images/app-icon-dark-3.png"} 
-                alt="App 3" 
+                alt="Safari" 
                 className="w-12 h-12 rounded-2xl cursor-pointer"
+                onClick={() => setIsSafariOpen(true)}
               />
 
               {/* App Icon 4 */}
