@@ -10,6 +10,7 @@ import Window from '../components/Window'
 import AppleMusicWindow from '../components/AppleMusicWindow'
 import SafariWindow from '../components/SafariWindow'
 import MailWindow from '../components/MailWindow'
+import NotesWindow from '../components/NotesWindow'
 import WelcomeModal from '../components/WelcomeModal'
 import { useTimeBasedBackground } from '../hooks/useTimeBasedBackground'
 
@@ -24,6 +25,7 @@ export default function Home() {
   const [isAppleMusicOpen, setIsAppleMusicOpen] = useState(false)
   const [isSafariOpen, setIsSafariOpen] = useState(false)
   const [isMailOpen, setIsMailOpen] = useState(false)
+  const [isNotesOpen, setIsNotesOpen] = useState(false)
   const [showWelcomeModal, setShowWelcomeModal] = useState(false)
   const { backgroundImage, isTransitioning } = useTimeBasedBackground()
   
@@ -233,6 +235,13 @@ export default function Home() {
         isDarkMode={getBackgroundColor() === '#1a1a2e'}
       />
 
+      {/* Notes Window */}
+      <NotesWindow 
+        isOpen={isNotesOpen}
+        onClose={() => setIsNotesOpen(false)}
+        isDarkMode={getBackgroundColor() === '#1a1a2e'}
+      />
+
       {/* Welcome Modal */}
       <WelcomeModal 
         isOpen={showWelcomeModal}
@@ -387,14 +396,15 @@ export default function Home() {
                 className="w-12 h-12 rounded-2xl cursor-pointer"
               />
 
-              {/* App Icon 12 */}
+              {/* App Icon 12 - Notes */}
               <motion.img
                 whileHover={{ scale: 1.2, y: -8 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 src={getBackgroundColor() === '#87CEEB' ? "/images/app-icon-12.png" : "/images/app-icon-dark-12.png"} 
-                alt="App 12" 
+                alt="Notes" 
                 className="w-12 h-12 rounded-2xl cursor-pointer"
+                onClick={() => setIsNotesOpen(true)}
               />
 
               {/* App Icon 13 */}
