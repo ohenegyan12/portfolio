@@ -950,7 +950,7 @@ SOCIAL_MEDIA_GRID_PLACEHOLDER`,
                                           color: 'white',
                                           opacity: 0.95,
                                           fontFamily: 'SF Pro Text, -apple-system, BlinkMacSystemFont, sans-serif'
-                                        }}>Creative collective's website blending culture, art, and stories.</div>
+                                        }}>Creative collective&apos;s website blending culture, art, and stories.</div>
                                       </div>
                                     </div>
                                     
@@ -1158,7 +1158,7 @@ SOCIAL_MEDIA_GRID_PLACEHOLDER`,
                                         margin: 0,
                                         lineHeight: '1.2',
                                         opacity: 0.95
-                                      }}>Ready to work together? Let's discuss your next project.</p>
+                                      }}>Ready to work together? Let&apos;s discuss your next project.</p>
                                     </div>
                                   </div>
                                 )}
