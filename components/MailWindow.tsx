@@ -1755,8 +1755,8 @@ export default function MailWindow({ isOpen, onClose, isDarkMode = false }: Mail
                           }}
                         >
                           <p>Hi there,</p>
-                          <p>Welcome to my portfolio! If you haven't explored the experience yet, take some time to click around and see the projects, designs, and experiments I've put together.</p>
-                          <p>Already explored? If you'd like to collaborate or work with me, just hit reply or send me a mail, I'd love to hear from you.</p>
+                          <p>Welcome to my portfolio! If you haven&apos;t explored the experience yet, take some time to click around and see the projects, designs, and experiments I&apos;ve put together.</p>
+                          <p>Already explored? If you&apos;d like to collaborate or work with me, just hit reply or send me a mail, I&apos;d love to hear from you.</p>
                           <p>Best,<br />Ohene</p>
                         </div>
                       </>
