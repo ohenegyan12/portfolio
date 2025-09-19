@@ -31,7 +31,11 @@ export default function NotesWindow({ isOpen, onClose, isDarkMode }: NotesWindow
       }
     `
     document.head.appendChild(style)
-    return () => document.head.removeChild(style)
+    return () => {
+      if (document.head.contains(style)) {
+        document.head.removeChild(style)
+      }
+    }
   }, [])
   const [notes, setNotes] = useState<Note[]>([
     {
