@@ -26,7 +26,17 @@ export default function MailWindow({ isOpen, onClose, isDarkMode = false }: Mail
   const [selectedEmail, setSelectedEmail] = useState<Email | null>(null)
   const [currentView, setCurrentView] = useState<'inbox' | 'sent' | 'drafts' | 'vips' | 'flagged' | 'remind' | 'sendLater' | 'icloudInbox' | 'icloudDrafts' | 'icloudSent' | 'car' | 'pets' | 'vacation' | 'shopping' | 'junk' | 'trash'>('inbox')
 
-  const emails: Email[] = []
+  const emails: Email[] = [
+    {
+      id: 1,
+      from: 'Ohene Gyan · Designer–Developer',
+      subject: 'Welcome to my portfolio',
+      preview: '1 new message — open to begin the experience',
+      time: '7:35 PM',
+      isRead: false,
+      isImportant: false
+    }
+  ]
 
   const filteredEmails = emails.filter(email => 
     email.subject.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -1413,14 +1423,15 @@ export default function MailWindow({ isOpen, onClose, isDarkMode = false }: Mail
                       Mail
                     </h2>
 
-                    {/* Empty Container */}
-                    <div 
-                      style={{
-                        width: '695px',
-                        height: '36px',
-                        flexShrink: 1
-                      }}
-                    />
+                     {/* Empty Container */}
+                     <div 
+                       style={{
+                         width: '680px',
+                         height: '36px',
+                         flexShrink: 1
+                       }}
+                     />
+
 
                     {/* Search Container */}
                     <div 
@@ -1484,53 +1495,192 @@ export default function MailWindow({ isOpen, onClose, isDarkMode = false }: Mail
                   </div>
                 </div>
 
-                {/* Main Content */}
+                {/* Main Content - Split Layout */}
                 <div 
-                  className="flex-1" 
+                  className="flex-1 flex" 
                   style={{ 
-                    padding: '16px 24px',
-                    overflowY: 'auto',
                     height: 'calc(100% - 52px)'
                   }}
                 >
-                  {selectedEmail ? (
-                    /* Detailed Email View */
-                    <div className="flex flex-col justify-start h-full">
-                      {/* Back Button */}
-                      <button
-                        onClick={handleBackToInbox}
-                        className="flex items-center justify-center mb-6 transition-colors duration-200 hover:bg-gray-100 rounded-full"
+                  {/* Email List Panel */}
+                  <div 
+                    className="flex flex-col"
+                    style={{
+                      width: '400px',
+                      borderRight: `1px solid ${isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
+                      padding: '16px 24px',
+                      overflowY: 'auto',
+                      background: 'transparent'
+                    }}
+                  >
+                    {/* Page Title */}
+                    <h2 
+                      style={{
+                        fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                        fontSize: '24px',
+                        fontWeight: '700',
+                        color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                        margin: '0 0 8px 0',
+                        lineHeight: '1.2'
+                      }}
+                    >
+                      {currentView === 'inbox' ? 'All Inboxes' : 
+                       currentView === 'sent' ? 'All Sent' : 
+                       currentView === 'drafts' ? 'All Drafts' :
+                       currentView === 'vips' ? 'VIPs' :
+                       currentView === 'flagged' ? 'Flagged' :
+                       currentView === 'remind' ? 'Remind Me' :
+                       currentView === 'sendLater' ? 'Send Later' :
+                       currentView === 'icloudInbox' ? 'Inbox' :
+                       currentView === 'icloudDrafts' ? 'Drafts' :
+                       currentView === 'icloudSent' ? 'Sent' :
+                       currentView === 'car' ? 'Car' :
+                       currentView === 'pets' ? 'Pets' :
+                       currentView === 'vacation' ? 'Vacation' :
+                       currentView === 'shopping' ? 'Shopping' :
+                       currentView === 'junk' ? 'Junk' :
+                       currentView === 'trash' ? 'Trash' : 'All Inboxes'}
+                    </h2>
+                    
+                    {/* Message Count */}
+                    {currentView === 'inbox' && (
+                      <div 
                         style={{
-                          width: '32px',
-                          height: '32px',
-                          backgroundColor: 'transparent',
-                          border: 'none',
-                          cursor: 'pointer'
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = 'transparent'
+                          fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                          fontSize: '14px',
+                          color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)',
+                          margin: '0 0 16px 0'
                         }}
                       >
-                        <svg 
-                          width="20" 
-                          height="20" 
-                          viewBox="0 0 24 24" 
-                          fill="none"
+                        {filteredEmails.length} message{filteredEmails.length !== 1 ? 's' : ''}, {filteredEmails.filter(email => !email.isRead).length} unread
+                      </div>
+                    )}
+                    
+                    {/* Email List */}
+                    <div className="flex flex-col">
+                      {filteredEmails.length > 0 ? (
+                        filteredEmails.map((email) => (
+                          <div 
+                            key={email.id}
+                            className="email-item"
+                            onClick={() => handleEmailClick(email)}
+                            style={{
+                              padding: '12px 0',
+                              cursor: 'pointer',
+                              transition: 'all 0.2s ease',
+                              position: 'relative',
+                              borderBottom: `1px solid ${isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'}`
+                            }}
+                          >
+                            <div className="flex items-start justify-between">
+                              <div className="flex items-start gap-3" style={{ flex: 1 }}>
+                                {/* Unread indicator dot */}
+                                {!email.isRead && (
+                                  <div 
+                                    style={{
+                                      width: '8px',
+                                      height: '8px',
+                                      borderRadius: '50%',
+                                      backgroundColor: '#007AFF',
+                                      flexShrink: 0,
+                                      marginTop: '12px'
+                                    }}
+                                  />
+                                )}
+                                
+                                
+                                <div style={{ flex: 1, minWidth: 0 }}>
+                                  <div className="flex items-center gap-2" style={{ marginBottom: '4px' }}>
+                                    <h3 
+                                      style={{
+                                        fontSize: '16px',
+                                        fontWeight: email.isRead ? '500' : '600',
+                                        color: isDarkMode ? 'white' : 'black',
+                                        fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                        margin: 0,
+                                        whiteSpace: 'nowrap',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis'
+                                      }}
+                                    >
+                                      {email.from}
+                                    </h3>
+                                    {email.isImportant && (
+                                      <div 
+                                        style={{
+                                          width: '8px',
+                                          height: '8px',
+                                          backgroundColor: '#FF3B30',
+                                          borderRadius: '50%',
+                                          flexShrink: 0
+                                        }}
+                                      />
+                                    )}
+                                  </div>
+                                  
+                                  <h4 
+                                    style={{
+                                      fontSize: '15px',
+                                      fontWeight: email.isRead ? '400' : '600',
+                                      color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
+                                      fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                      margin: '0 0 4px 0',
+                                      whiteSpace: 'nowrap',
+                                      overflow: 'hidden',
+                                      textOverflow: 'ellipsis'
+                                    }}
+                                  >
+                                    {email.subject}
+                                  </h4>
+                                  
+                                  <p 
+                                    style={{
+                                      fontSize: '14px',
+                                      color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)',
+                                      fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                      margin: 0,
+                                      whiteSpace: 'nowrap',
+                                      overflow: 'hidden',
+                                      textOverflow: 'ellipsis'
+                                    }}
+                                  >
+                                    {email.preview}
+                                  </p>
+                                </div>
+                              </div>
+                              
+                            </div>
+                          </div>
+                        ))
+                      ) : (
+                        <div 
+                          style={{
+                            width: '100%',
+                            textAlign: 'center',
+                            color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)',
+                            fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                            fontSize: '14px',
+                            marginTop: '50px'
+                          }}
                         >
-                          <path 
-                            d="M15 18L9 12L15 6" 
-                            stroke={isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)'} 
-                            strokeWidth="2" 
-                            strokeLinecap="round" 
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </button>
-                      
-                      <div className="flex flex-col w-full">
+                          No emails found matching &quot;{searchTerm}&quot;
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Message Content Panel */}
+                  <div 
+                    className="flex flex-col"
+                    style={{
+                      flex: 1,
+                      padding: '16px 24px',
+                      overflowY: 'auto',
+                      background: 'transparent'
+                    }}
+                  >
+                    {selectedEmail ? (
+                      <>
                         {/* Email Header */}
                         <div 
                           style={{
@@ -1553,47 +1703,28 @@ export default function MailWindow({ isOpen, onClose, isDarkMode = false }: Mail
                           </h1>
                           
                           <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-3">
-                              <div 
+                            <div>
+                              <p 
                                 style={{
-                                  width: '40px',
-                                  height: '40px',
-                                  borderRadius: '50%',
-                                  backgroundColor: '#007AFF',
-                                  display: 'flex',
-                                  alignItems: 'center',
-                                  justifyContent: 'center',
-                                  color: 'white',
                                   fontSize: '16px',
                                   fontWeight: '600',
-                                  fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif'
+                                  color: isDarkMode ? 'white' : 'black',
+                                  fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                  margin: '0 0 2px 0'
                                 }}
                               >
-                                {selectedEmail.from.charAt(0)}
-                              </div>
-                              <div>
-                                <p 
-                                  style={{
-                                    fontSize: '16px',
-                                    fontWeight: '600',
-                                    color: isDarkMode ? 'white' : 'black',
-                                    fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
-                                    margin: '0 0 2px 0'
-                                  }}
-                                >
-                                  {selectedEmail.from}
-                                </p>
-                                <p 
-                                  style={{
-                                    fontSize: '14px',
-                                    color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)',
-                                    fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
-                                    margin: 0
-                                  }}
-                                >
-                                  {selectedEmail.time}
-                                </p>
-                              </div>
+                                {selectedEmail.from}
+                              </p>
+                              <p 
+                                style={{
+                                  fontSize: '14px',
+                                  color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)',
+                                  fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
+                                  margin: 0
+                                }}
+                              >
+                                {selectedEmail.time}
+                              </p>
                             </div>
                             
                             {selectedEmail.isImportant && (
@@ -1623,186 +1754,47 @@ export default function MailWindow({ isOpen, onClose, isDarkMode = false }: Mail
                             fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif'
                           }}
                         >
-                          {/* Content removed */}
+                          <p>Hi there,</p>
+                          <p>Welcome to my portfolio! If you haven't explored the experience yet, take some time to click around and see the projects, designs, and experiments I've put together.</p>
+                          <p>Already explored? If you'd like to collaborate or work with me, just hit reply or send me a mail, I'd love to hear from you.</p>
+                          <p>Best,<br />Ohene</p>
                         </div>
-                      </div>
-                    </div>
-                  ) : (
-                    /* Email List View */
-                    <div className="flex flex-col">
-                      {/* Page Title */}
-                      <h2 
+                      </>
+                    ) : (
+                      /* Empty State */
+                      <div 
                         style={{
-                          fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
-                          fontSize: '24px',
-                          fontWeight: '700',
-                          color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
-                          margin: '0 0 16px 0',
-                          lineHeight: '1.2'
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          height: '100%',
+                          color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)',
+                          fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif'
                         }}
                       >
-                        {currentView === 'inbox' ? 'All Inboxes' : 
-                         currentView === 'sent' ? 'All Sent' : 
-                         currentView === 'drafts' ? 'All Drafts' :
-                         currentView === 'vips' ? 'VIPs' :
-                         currentView === 'flagged' ? 'Flagged' :
-                         currentView === 'remind' ? 'Remind Me' :
-                         currentView === 'sendLater' ? 'Send Later' :
-                         currentView === 'icloudInbox' ? 'Inbox' :
-                         currentView === 'icloudDrafts' ? 'Drafts' :
-                         currentView === 'icloudSent' ? 'Sent' :
-                         currentView === 'car' ? 'Car' :
-                         currentView === 'pets' ? 'Pets' :
-                         currentView === 'vacation' ? 'Vacation' :
-                         currentView === 'shopping' ? 'Shopping' :
-                         currentView === 'junk' ? 'Junk' :
-                         currentView === 'trash' ? 'Trash' : 'All Inboxes'}
-                      </h2>
-                      
-                      {/* Email List */}
-                      <div className="flex flex-col" style={{ gap: '8px' }}>
-                        {filteredEmails.length > 0 ? (
-                          filteredEmails.map((email) => (
-                            <div 
-                              key={email.id}
-                              className="email-item"
-                              onClick={() => handleEmailClick(email)}
-                              style={{
-                                padding: '16px',
-                                borderRadius: '8px',
-                                backgroundColor: email.isRead 
-                                  ? (isDarkMode ? 'rgba(255, 255, 255, 0.02)' : 'rgba(0, 0, 0, 0.02)')
-                                  : (isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)'),
-                                border: `1px solid ${isDarkMode ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'}`,
-                                cursor: 'pointer',
-                                transition: 'all 0.2s ease',
-                                position: 'relative'
-                              }}
-                              onMouseEnter={(e) => {
-                                e.currentTarget.style.backgroundColor = isDarkMode ? 'rgba(255, 255, 255, 0.08)' : 'rgba(0, 0, 0, 0.05)'
-                                e.currentTarget.style.transform = 'translateY(-1px)'
-                                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)'
-                              }}
-                              onMouseLeave={(e) => {
-                                e.currentTarget.style.backgroundColor = email.isRead 
-                                  ? (isDarkMode ? 'rgba(255, 255, 255, 0.02)' : 'rgba(0, 0, 0, 0.02)')
-                                  : (isDarkMode ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)')
-                                e.currentTarget.style.transform = 'translateY(0)'
-                                e.currentTarget.style.boxShadow = 'none'
-                              }}
-                            >
-                              <div className="flex items-start justify-between">
-                                <div className="flex items-start gap-3" style={{ flex: 1 }}>
-                                  <div 
-                                    style={{
-                                      width: '32px',
-                                      height: '32px',
-                                      borderRadius: '50%',
-                                      backgroundColor: '#007AFF',
-                                      display: 'flex',
-                                      alignItems: 'center',
-                                      justifyContent: 'center',
-                                      color: 'white',
-                                      fontSize: '14px',
-                                      fontWeight: '600',
-                                      fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
-                                      flexShrink: 0
-                                    }}
-                                  >
-                                    {email.from.charAt(0)}
-                                  </div>
-                                  
-                                  <div style={{ flex: 1, minWidth: 0 }}>
-                                    <div className="flex items-center gap-2" style={{ marginBottom: '4px' }}>
-                                      <h3 
-                                        style={{
-                                          fontSize: '16px',
-                                          fontWeight: email.isRead ? '500' : '600',
-                                          color: isDarkMode ? 'white' : 'black',
-                                          fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
-                                          margin: 0,
-                                          whiteSpace: 'nowrap',
-                                          overflow: 'hidden',
-                                          textOverflow: 'ellipsis'
-                                        }}
-                                      >
-                                        {email.from}
-                                      </h3>
-                                      {email.isImportant && (
-                                        <div 
-                                          style={{
-                                            width: '8px',
-                                            height: '8px',
-                                            backgroundColor: '#FF3B30',
-                                            borderRadius: '50%',
-                                            flexShrink: 0
-                                          }}
-                                        />
-                                      )}
-                                    </div>
-                                    
-                                    <h4 
-                                      style={{
-                                        fontSize: '15px',
-                                        fontWeight: email.isRead ? '400' : '600',
-                                        color: isDarkMode ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.85)',
-                                        fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
-                                        margin: '0 0 4px 0',
-                                        whiteSpace: 'nowrap',
-                                        overflow: 'hidden',
-                                        textOverflow: 'ellipsis'
-                                      }}
-                                    >
-                                      {email.subject}
-                                    </h4>
-                                    
-                                    <p 
-                                      style={{
-                                        fontSize: '14px',
-                                        color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)',
-                                        fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
-                                        margin: 0,
-                                        whiteSpace: 'nowrap',
-                                        overflow: 'hidden',
-                                        textOverflow: 'ellipsis'
-                                      }}
-                                    >
-                                      {email.preview}
-                                    </p>
-                                  </div>
-                                </div>
-                                
-                                <div 
-                                  style={{
-                                    fontSize: '12px',
-                                    color: isDarkMode ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)',
-                                    fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
-                                    flexShrink: 0,
-                                    marginLeft: '12px'
-                                  }}
-                                >
-                                  {email.time}
-                                </div>
-                              </div>
-                            </div>
-                          ))
-                        ) : (
-                          <div 
-                            style={{
-                              width: '100%',
-                              textAlign: 'center',
-                              color: isDarkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.6)',
-                              fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
-                              fontSize: '14px',
-                              marginTop: '50px'
-                            }}
-                          >
-                            No emails found matching &quot;{searchTerm}&quot;
-                          </div>
-                        )}
+                        <h3 
+                          style={{
+                            fontSize: '18px',
+                            fontWeight: '600',
+                            margin: '0 0 8px 0',
+                            color: isDarkMode ? 'rgba(255, 255, 255, 0.8)' : 'rgba(0, 0, 0, 0.8)'
+                          }}
+                        >
+                          Select a message
+                        </h3>
+                        <p 
+                          style={{
+                            fontSize: '14px',
+                            margin: 0,
+                            textAlign: 'center'
+                          }}
+                        >
+                          Choose an email from the list to view its contents
+                        </p>
                       </div>
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
