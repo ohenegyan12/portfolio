@@ -12,8 +12,8 @@ import SafariWindow from '../components/SafariWindow'
 import MailWindow from '../components/MailWindow'
 import NotesWindow from '../components/NotesWindow'
 import PhotosModal from '../components/PhotosModal'
-import MapsWindow from '../components/MapsWindow'
 import WelcomeModal from '../components/WelcomeModal'
+import AppStoreModal from '../components/AppStoreModal'
 import { useTimeBasedBackground } from '../hooks/useTimeBasedBackground'
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
   const [isMailOpen, setIsMailOpen] = useState(false)
   const [isNotesOpen, setIsNotesOpen] = useState(false)
   const [isPhotosOpen, setIsPhotosOpen] = useState(false)
-  const [isMapsOpen, setIsMapsOpen] = useState(false)
+  const [isAppStoreOpen, setIsAppStoreOpen] = useState(false)
   const [showWelcomeModal, setShowWelcomeModal] = useState(false)
   const { backgroundImage, isTransitioning } = useTimeBasedBackground()
   
@@ -40,7 +40,7 @@ export default function Home() {
     if (isNotesOpen) return 'Notes'
     if (isAppleMusicOpen) return 'Music'
     if (isPhotosOpen) return 'Photos'
-    if (isMapsOpen) return 'Maps'
+    if (isAppStoreOpen) return 'App Store'
     if (isWindowOpen) return 'About Me'
     if (isAboutModalOpen) return 'About'
     if (isSearchOpen) return 'Spotlight'
@@ -268,10 +268,11 @@ export default function Home() {
         isDarkMode={getBackgroundColor() === '#1a1a2e'}
       />
 
-      {/* Maps Window */}
-      <MapsWindow 
-        isOpen={isMapsOpen}
-        onClose={() => setIsMapsOpen(false)}
+
+      {/* App Store Modal */}
+      <AppStoreModal 
+        isOpen={isAppStoreOpen}
+        onClose={() => setIsAppStoreOpen(false)}
         isDarkMode={getBackgroundColor() === '#1a1a2e'}
       />
 
@@ -300,7 +301,7 @@ export default function Home() {
                   ? 'rgba(246, 246, 246, 0.36)' 
                   : 'rgba(74, 74, 74, 0.39)',
                 borderRadius: '15px',
-                width: '1300px',
+                width: '1220px',
                 height: '62px',
                 boxShadow: getBackgroundColor() === '#87CEEB' 
                   ? '0 0 6px rgba(0, 0, 0, 0.15)' 
@@ -369,16 +370,6 @@ export default function Home() {
                 onClick={() => setIsMailOpen(true)}
               />
 
-              {/* App Icon 6 - Maps */}
-              <motion.img
-                whileHover={{ scale: 1.2, y: -8 }}
-                whileTap={{ scale: 0.9 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-                src={getBackgroundColor() === '#87CEEB' ? "/images/app-icon-6.png" : "/images/app-icon-dark-6.png"} 
-                alt="Maps" 
-                className="w-12 h-12 rounded-2xl cursor-pointer"
-                onClick={() => setIsMapsOpen(true)}
-              />
 
               {/* App Icon 7 - Photos */}
               <motion.img
@@ -483,14 +474,15 @@ export default function Home() {
                 className="w-12 h-12 rounded-2xl cursor-pointer"
               />
 
-              {/* App Icon 17 */}
+              {/* App Icon 17 - App Store */}
               <motion.img
                 whileHover={{ scale: 1.2, y: -8 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 src={getBackgroundColor() === '#87CEEB' ? "/images/app-icon-17.png" : "/images/app-icon-dark-17.png"} 
-                alt="App 17" 
+                alt="App Store" 
                 className="w-12 h-12 rounded-2xl cursor-pointer"
+                onClick={() => setIsAppStoreOpen(true)}
               />
 
               {/* Divider */}
