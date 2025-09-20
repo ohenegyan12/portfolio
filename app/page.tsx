@@ -12,6 +12,7 @@ import SafariWindow from '../components/SafariWindow'
 import MailWindow from '../components/MailWindow'
 import NotesWindow from '../components/NotesWindow'
 import PhotosModal from '../components/PhotosModal'
+import MapsWindow from '../components/MapsWindow'
 import WelcomeModal from '../components/WelcomeModal'
 import { useTimeBasedBackground } from '../hooks/useTimeBasedBackground'
 
@@ -28,8 +29,24 @@ export default function Home() {
   const [isMailOpen, setIsMailOpen] = useState(false)
   const [isNotesOpen, setIsNotesOpen] = useState(false)
   const [isPhotosOpen, setIsPhotosOpen] = useState(false)
+  const [isMapsOpen, setIsMapsOpen] = useState(false)
   const [showWelcomeModal, setShowWelcomeModal] = useState(false)
   const { backgroundImage, isTransitioning } = useTimeBasedBackground()
+  
+  // Function to get the current active window name
+  const getCurrentWindowName = () => {
+    if (isSafariOpen) return 'Safari'
+    if (isMailOpen) return 'Mail'
+    if (isNotesOpen) return 'Notes'
+    if (isAppleMusicOpen) return 'Music'
+    if (isPhotosOpen) return 'Photos'
+    if (isMapsOpen) return 'Maps'
+    if (isWindowOpen) return 'About Me'
+    if (isAboutModalOpen) return 'About'
+    if (isSearchOpen) return 'Spotlight'
+    if (isCalendarOpen) return 'Calendar'
+    return 'Finder'
+  }
   
   // Get background color based on time of day
   const getBackgroundColor = () => {
@@ -138,7 +155,7 @@ export default function Home() {
                  fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif',
                  color: getBackgroundColor() === '#87CEEB' ? '#000000' : '#FFFFFF'
                }}>
-            <span className="cursor-pointer">Finder</span>
+            <span className="cursor-pointer">{getCurrentWindowName()}</span>
             <span className="cursor-pointer">File</span>
             <span className="cursor-pointer">Edit</span>
             <span className="cursor-pointer">View</span>
@@ -251,6 +268,13 @@ export default function Home() {
         isDarkMode={getBackgroundColor() === '#1a1a2e'}
       />
 
+      {/* Maps Window */}
+      <MapsWindow 
+        isOpen={isMapsOpen}
+        onClose={() => setIsMapsOpen(false)}
+        isDarkMode={getBackgroundColor() === '#1a1a2e'}
+      />
+
       {/* Welcome Modal */}
       <WelcomeModal 
         isOpen={showWelcomeModal}
@@ -345,14 +369,15 @@ export default function Home() {
                 onClick={() => setIsMailOpen(true)}
               />
 
-              {/* App Icon 6 */}
+              {/* App Icon 6 - Maps */}
               <motion.img
                 whileHover={{ scale: 1.2, y: -8 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 src={getBackgroundColor() === '#87CEEB' ? "/images/app-icon-6.png" : "/images/app-icon-dark-6.png"} 
-                alt="App 6" 
+                alt="Maps" 
                 className="w-12 h-12 rounded-2xl cursor-pointer"
+                onClick={() => setIsMapsOpen(true)}
               />
 
               {/* App Icon 7 - Photos */}

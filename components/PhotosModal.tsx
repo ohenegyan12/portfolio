@@ -119,7 +119,9 @@ export default function PhotosModal({ isOpen, onClose, isDarkMode }: PhotosModal
         { src: '/images/photo-9.png', alt: 'Photo 9' },
         { src: '/images/photo-10.png', alt: 'Photo 10' },
         { src: '/images/photo-11.png', alt: 'Photo 11' },
-        { src: '/images/photo-12.png', alt: 'Photo 12' }
+        { src: '/images/photo-12.png', alt: 'Photo 12' },
+        { src: '/images/photo-13.png', alt: 'Photo 13' },
+        { src: '/images/photo-14.png', alt: 'Photo 14' }
       ]
       
       const shuffledFavorites = photoFiles
@@ -1420,6 +1422,66 @@ export default function PhotosModal({ isOpen, onClose, isDarkMode }: PhotosModal
                     <img 
                       src="/images/photo-12.png" 
                       alt="Photo 12" 
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        display: 'block'
+                      }}
+                    />
+                    </div>
+
+                  {/* Photo 13 - Fifth Row Middle */}
+                  <div 
+                    style={{
+                      aspectRatio: '3/4',
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      cursor: 'pointer',
+                      transition: 'transform 0.2s ease',
+                      gridRow: '5',
+                      gridColumn: '2'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.02)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'
+                    }}
+                  >
+                    <img 
+                      src="/images/photo-13.png" 
+                      alt="Photo 13" 
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        display: 'block'
+                      }}
+                    />
+                    </div>
+
+                  {/* Photo 14 - Fifth Row Right */}
+                  <div 
+                    style={{
+                      aspectRatio: '4/3',
+                      borderRadius: '8px',
+                      overflow: 'hidden',
+                      cursor: 'pointer',
+                      transition: 'transform 0.2s ease',
+                      gridRow: '5',
+                      gridColumn: '3'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = 'scale(1.02)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = 'scale(1)'
+                    }}
+                  >
+                    <img 
+                      src="/images/photo-14.png" 
+                      alt="Photo 14" 
                       style={{
                         width: '100%',
                         height: '100%',
